@@ -25,7 +25,3 @@ def load_data():
 # Применим функцию 
 df = load_data() 
 
-if show_data == True:
-    st.subheader('Raw data')
-    
-    st.write(df)
