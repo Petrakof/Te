@@ -4,9 +4,6 @@ import pandas as pd
 from transformers import pipeline
 from PIL import  Image
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
 def intro():
     import streamlit as st
 # Title of the application 
