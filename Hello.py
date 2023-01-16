@@ -54,10 +54,17 @@ def mapping_demo():
 def plotting_demo():
     import streamlit as st
     import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """Графики""")
+
+    df_N = df_model[df_model["Sentinent"]=="NEGATIVE"]
+    df_n =df_N.user_id.value_counts().sort_index()
+    df_n.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
+    plt.title("Самые негативные user_id	")        
 page_names_to_funcs = {
     "Главная": intro,
     "Загрузка истории чатов": mapping_demo,
