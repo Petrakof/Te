@@ -12,7 +12,7 @@ st.write(
     """This demo shows how to use `st.write` to visualize Pandas DataFrames"""
 )
 
-DATA = ('df.csv', delimiter = ',')
+DATA = pd.read_csv('df.csv', delimiter = ',')
 columns=['user_id', 'text']
 @st.cache # для оптимизации работы приложения
 
