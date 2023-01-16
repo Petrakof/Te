@@ -23,3 +23,15 @@ if show_data == True:
     
     st.write(df)
 
+def load_model_2():
+    model_2=pipeline("sentiment-analysis",   
+                      "blanchefort/rubert-base-cased-sentiment")
+    return model_2
+
+st.header ("Определение тональности текстов")
+df_model = df.copy()
+lst = []
+for i in df_model["text"]:
+  lst.append(model_2(str(i))[0]["label"])
+df_model["Sentinent"]=pd.DataFrame(lst)
+df_model
