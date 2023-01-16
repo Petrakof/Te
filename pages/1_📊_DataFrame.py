@@ -4,9 +4,9 @@ from urllib.error import URLError
 from transformers import pipeline
 import plotly.express as px
 
-st.markdown("# Page 2 🎉")
+st.markdown("# История чата Телеграм 🎉")
 
-st.sidebar.markdown("# Page 2 🎉")
+st.sidebar.markdown("# История чата Телеграм 🎉")
 DATA = ('df.csv')
 
 @st.cache # для оптимизации работы приложения
