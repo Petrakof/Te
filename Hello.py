@@ -56,12 +56,7 @@ def plotting_demo():
 
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
-        """
-        This demo illustrates a combination of plotting and animation with
-Streamlit. We're generating a bunch of random numbers in a loop for around
-5 seconds. Enjoy!
-"""
-    )
+        """Графики""")
 page_names_to_funcs = {
     "Главная": intro,
     "Загрузка истории чатов": mapping_demo,
