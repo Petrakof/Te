@@ -21,10 +21,10 @@ columns=['user_id', 'text']
 def load_data():
     df = pd.read_csv(DATA, columns)
     return df   
-
+df = load_data() 
 show_data = st.sidebar.checkbox('Show raw data')
 if show_data == True:
     st.subheader('Raw data')
     
-    st.write(DATA)
+    st.write(df)
 
