@@ -34,6 +34,6 @@ load_model_2(df_model["text"][1])[0]["label"]
 
 lst = []
 for i in df_model["text"]:
-  lst.append(model(str(i))[0]["label"])
+  lst.append(df_model(str(i))[0]["label"])
 df_model["Sentinent"]=pd.DataFrame(lst)
 df_model
