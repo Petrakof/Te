@@ -33,6 +33,6 @@ def load_model():
     for i in df_model["text"]:
          lst.append(model(str(i))[0]["label"])
     df_model["Sentinent"]=pd.DataFrame(lst)
-    df_model
+    
     return model
 df_model
