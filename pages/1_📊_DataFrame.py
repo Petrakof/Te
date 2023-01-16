@@ -12,13 +12,13 @@ st.write(
     """This demo shows how to use `st.write` to visualize Pandas DataFrames"""
 )
 
-DATA = pd.read_csv('df.csv', delimiter = ',')
+DATA = ('df.csv')
 columns=['user_id', 'text']
 @st.cache # для оптимизации работы приложения
 
 # Создадим функцию для загрузки данных
 def load_data():
-    df = pd.read_csv(DATA, parse_dates=[columns])
+    df = pd.read_csv(DATA, parse_dates=[columns],delimiter = ',')
     return df   
 
 # Применим функцию 
