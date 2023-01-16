@@ -13,7 +13,7 @@ st.write(
 )
 
 DATA = ('df.csv')
-DATE_COLUMNs = ['user_id', 'text']
+DATE_COLUMNs = ['user_id'; 'text']
 @st.cache # для оптимизации работы приложения
 
 # Создадим функцию для загрузки данных
