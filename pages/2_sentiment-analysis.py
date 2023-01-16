@@ -5,8 +5,8 @@ from urllib.error import URLError
 from transformers import pipeline
 
 
-st.markdown("# Sentiment-analysis")
-st.sidebar.markdown( "Sentiment-analysis")
+st.markdown("# Анализ тональности такста")
+st.sidebar.markdown( "Анализ тональности такста")
 
 @st.cache(allow_output_mutation=True)
 
