@@ -9,5 +9,5 @@ st.set_page_config(
 # Title of the application 
 st.write("# Добро пожаловать! 👋")
 
-st.sidebar.success("Начало")
+st.sidebar.success("Select a demo above.")
 st.subheader("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
