@@ -38,8 +38,8 @@ def mapping_demo():
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.sidebar.button('Распознать')
-    
-    st.snow()
+
+    st.balloons()
 
     df_model = data.copy()
 
@@ -63,5 +63,5 @@ page_names_to_funcs = {
     "Загрузка истории чатов": mapping_demo,
     "Диаграммы": plotting_demo,
    }
-demo_name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
-page_names_to_funcs[demo_name]()
+name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
+page_names_to_funcs[name]()
