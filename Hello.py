@@ -4,7 +4,9 @@ from transformers import pipeline
 from PIL import  Image
 from telethon.sync import TelegramClient
 
-st.set_page_config(
+def intro(): 
+     import streamlit as st
+     st.set_page_config(
     page_title="Добро пожаловать",
     page_icon="👋",)
 # Title of the application 
