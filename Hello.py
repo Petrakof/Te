@@ -4,7 +4,7 @@ import pandas as pd
 from transformers import pipeline
 from PIL import  Image
 
-def Начало():
+def intro():
     import streamlit as st
 # Title of the application 
 st.write("# Добро пожаловать! 👋")
@@ -59,9 +59,9 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
 """
     )
 page_names_to_funcs = {
-    "—": intro,
-    "Plotting Demo": plotting_demo,
-    "Mapping Demo": mapping_demo,
+    "Главная": intro,
+    "Загрузка истории чатов": plotting_demo,
+    "Диаграммы": mapping_demo,
    }
 
 demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
