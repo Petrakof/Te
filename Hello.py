@@ -19,7 +19,6 @@ st.image(display)
 @st.cache
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
-
 datafile = st.file_uploader("Загрузите файл csv", ["csv"])
 if datafile is None:
     st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
