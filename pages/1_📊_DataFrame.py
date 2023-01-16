@@ -31,10 +31,11 @@ def load_model():
                       "blanchefort/rubert-base-cased-sentiment")
     model(df_model["text"][1])[0]["label"]
     return model
-lst = []
-for i in df_model["text"]:
-     lst.append(model(str(i))[0]["label"])
-df_model["Sentinent"]=pd.DataFrame(lst)
-    
-    
-df_model
+if result:
+    lst = []
+    for i in df_model["text"]:
+        lst.append(model(str(i))[0]["label"])
+        df_model["Sentinent"]=pd.DataFrame(lst)
+
+st.write(df_model)
+
