@@ -3,4 +3,4 @@ transformers
 tensorflow-cpu
 protobuf==3.19
 telethon
-plotly_express
+plotly
