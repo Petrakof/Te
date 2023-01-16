@@ -16,7 +16,7 @@ DATA = ('df.csv')
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
-datafile = file_uploader("Загрузите файл csv", ["csv"])
+datafile = st.file_uploader("Загрузите файл csv", ["csv"])
 if datafile is None:
     st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
     st.stop()
