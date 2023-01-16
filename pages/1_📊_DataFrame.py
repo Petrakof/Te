@@ -13,5 +13,15 @@ st.write(
 )
 df = pd.read_csv('df.csv',columns=['user_id', 'text'])
 
+DATA = ('df.csv')
+DATE_COLUMNs = ['user_id', 'text']
+@st.cache # для оптимизации работы приложения
 
+# Создадим функцию для загрузки данных
+def load_data():
+    df = pd.read_csv(DATA, parse_dates=[DATE_COLUMNs])
+    return df   
+
+# Применим функцию 
+df = load_data() 
 
