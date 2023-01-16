@@ -29,28 +29,29 @@ if option == 'ГДобро Пожаловать':
 			"""
 		)
 elif option == "Определение тональности текста":
-@st.cache
-def read_data(uploaded_file):
+
+ @st.cache(allow_output_mutation=True)
+ def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
-datafile = st.file_uploader("Загрузите файл csv", ["csv"])
-if datafile is None:
+ datafile = st.file_uploader("Загрузите файл csv", ["csv"])
+ if datafile is None:
     st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
     st.stop()
 
-data = read_data(datafile).copy()
+ data = read_data(datafile).copy()
 
-model=pipeline("sentiment-analysis",   
+ model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-result = st.sidebar.button('Распознать')
+ result = st.sidebar.button('Распознать')
 
-df_model = data.copy()
+ df_model = data.copy()
 
-if result:
+ if result:
     lst = []
     for i in df_model["text"]:
         lst.append(model(str(i))[0]["label"])
         df_model["Sentinent"]=pd.DataFrame(lst)
 
-st.write(df_model)
+ st.write(df_model)
