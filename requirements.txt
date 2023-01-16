@@ -4,3 +4,4 @@ tensorflow-cpu
 protobuf==3.19
 telethon
 plotly
+torch
