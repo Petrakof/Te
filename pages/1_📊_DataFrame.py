@@ -11,11 +11,7 @@ st.sidebar.header("DataFrame")
 st.write(
     """This demo shows how to use `st.write` to visualize Pandas DataFrames"""
 )
-df = pd.read_csv("df.csv")
-
-@st.experimental_memo
-def convert_df(df):
-   return df.to_csv(index=False).encode('utf-8')
+df = pd.read_csv("df.csv",columns=['user_id', 'text'])
 
 
 
