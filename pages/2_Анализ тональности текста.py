@@ -17,10 +17,10 @@ def load_model():
     return model
 
 st.header ("Определение тональности текстов")
-
+df_model = df.copy()
+lst = []
+for i in df_model["text"]:
+  lst.append(model(str(i))[0]["label"])
+df_model["Sentinent"]=pd.DataFrame(lst)
+df_model
 result = st.button("Определить тональность текста")
-model = load_model()
-if result:
-    res = model(text)
-    sent = res[0]['label'] 
-    st.write(model(text)[0]["label"])
