@@ -1,5 +1,7 @@
 import numpy as np
 import streamlit as st
+import torch
+import pandas as pd
 from transformers import pipeline
 from PIL import  Image
 import matplotlib.pyplot as plt
