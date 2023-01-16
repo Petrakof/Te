@@ -7,8 +7,8 @@ from PIL import  Image
 def intro():
     import streamlit as st
 # Title of the application 
-st.write("# Welcome to Streamlit! 👋")
-st.sidebar.success("Select a demo above.")
+st.write("# Добро пожаловать! 👋")
+st.sidebar.success("Выбрать раздел")
 st.markdown('Анализ тональности чатов Телеграм\n', )
 st.subheader("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
 
