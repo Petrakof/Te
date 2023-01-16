@@ -4,7 +4,6 @@ import streamlit as st
 from transformers import pipeline
 from PIL import  Image
 from telethon.sync import TelegramClient
-import torch
 from transformers import AutoModelForSequenceClassification
 from transformers import BertTokenizerFast
 
