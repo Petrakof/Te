@@ -21,7 +21,7 @@ if datafile is None:
     st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
     st.stop()
     
-  data = read_data(datafile).copy()
+data = read_data(datafile).copy()
 
 model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
