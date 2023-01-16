@@ -18,4 +18,4 @@ def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
 
-df = pd.DataFrame(data, columns=['user_id', 'text'])
+
