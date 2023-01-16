@@ -4,7 +4,7 @@ import pandas as pd
 from transformers import pipeline
 from PIL import  Image
 
-def intro():
+def Начало():
     import streamlit as st
 # Title of the application 
 st.write("# Добро пожаловать! 👋")
