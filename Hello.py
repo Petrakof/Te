@@ -19,9 +19,9 @@ st.image(display)
 
 page_names_to_funcs = {
     "—": intro,
-    "Plotting Demo": plotting_demo,
-    "Mapping Demo": mapping_demo,
-    "DataFrame Demo": data_frame_demo
+    "1_📊_DataFrame": 1_📊_DataFrame,
+    "2_Анализ тональности текста": 2_Анализ тональности текста,
+    "3_Диаграммы": Диаграммы
 }
 
 demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())
