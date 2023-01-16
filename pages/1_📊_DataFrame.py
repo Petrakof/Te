@@ -5,9 +5,11 @@ from transformers import pipeline
 import plotly.express as px
 from telethon.sync import TelegramClient
 
-st.markdown("# История чата Телеграм 🎉")
+st.set_page_config (page_title="История чата Телеграм", page_icon="🎉")
 
+st.markdown("# История чата Телеграм 🎉")
 st.sidebar.markdown("# История чата Телеграм 🎉")
+
 DATA = ('df.csv')
 
 @st.cache # для оптимизации работы приложения
