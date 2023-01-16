@@ -1,10 +1,11 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 from transformers import pipeline
 from PIL import  Image
 
 # Title of the application 
-st.title('Анализ тональности текста\n', )
+st.title('Анализ тональности чатов Телеграм\n', )
 st.subheader("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
 
 display = Image.open('images/display.jpg')
