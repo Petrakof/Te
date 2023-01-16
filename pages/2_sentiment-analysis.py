@@ -4,12 +4,10 @@ import plotly.express as px
 from urllib.error import URLError
 from transformers import pipeline
 
-st.set_page_config(page_title="Sentiment-analysis", page_icon="📊")
 
 st.markdown("# Sentiment-analysis")
-st.sidebar.header( "Sentiment-analysis")
-st.write (
-    """This demo shows how to use `st.write` to visualize Pandas DataFrames""")
+st.sidebar.markdown( "Sentiment-analysis")
+
 @st.cache(allow_output_mutation=True)
 
 def load_model():
