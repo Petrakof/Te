@@ -16,30 +16,35 @@ display = Image.open('images/display.jpg')
 display = np.array(display)
 st.image(display)
 
-@st.cache
-def read_data(uploaded_file):
-    return pd.read_csv(uploaded_file)
-datafile = st.file_uploader("Загрузите файл csv", ["csv"])
-if datafile is None:
-    st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
-    st.stop()
+def mapping_demo():
+    import streamlit as st
+    import pandas as pd
+    from transformers import pipeline
+    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
+    @st.cache
+    def read_data(uploaded_file):
+        return pd.read_csv(uploaded_file)
+    datafile = st.file_uploader("Загрузите файл csv", ["csv"])
+    if datafile is None:
+        st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
+        st.stop()
 
-data = read_data(datafile).copy()
+    data = read_data(datafile).copy()
 
-model=pipeline("sentiment-analysis",   
+    model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-result = st.sidebar.button('Распознать')
+    result = st.sidebar.button('Распознать')
 
-df_model = data.copy()
+    df_model = data.copy()
 
-if result:
-    lst = []
+    if result:
+        lst = []
     for i in df_model["text"]:
         lst.append(model(str(i))[0]["label"])
         df_model["Sentinent"]=pd.DataFrame(lst)
 
-st.write(df_model)
+    st.write(df_model)
 
 def plotting_demo():
     import streamlit as st
@@ -56,7 +61,7 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
     )
 page_names_to_funcs = {
     "Главная": intro,
-    "Загрузка истории чатов": read_data,
+    "Загрузка истории чатов": mapping_demo,
     "Диаграммы": plotting_demo,
    }
 
