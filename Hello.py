@@ -48,8 +48,7 @@ def mapping_demo():
 
 def plotting_demo():
     import streamlit as st
-    import time
-    import numpy as np
+    port numpy as np
 
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
@@ -64,6 +63,5 @@ page_names_to_funcs = {
     "Загрузка истории чатов": mapping_demo,
     "Диаграммы": plotting_demo,
    }
-
 demo_name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[demo_name]()
