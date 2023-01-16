@@ -4,7 +4,9 @@ from urllib.error import URLError
 from transformers import pipeline
 import plotly.express as px
 
-
+st.set_page_config(
+    page_title="Добро пожаловать",
+    page_icon="👋",)
 st.markdown("# DataFrame")
 st.sidebar.markdown("# DataFrame")
 st.write(
@@ -19,4 +21,8 @@ def load_data():
     df = pd.read_csv(DATA)
     return df   
 
+show_data = st.sidebar.checkbox('Show raw data')
+if show_data == True:
+    st.subheader('Raw data')
+    st.write(df)
 
