@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from urllib.error import URLError
+from transformers import pipeline
 
 st.set_page_config(page_title="DataFrame Demo", page_icon="📊")
 
