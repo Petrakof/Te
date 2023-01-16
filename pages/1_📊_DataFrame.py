@@ -27,14 +27,14 @@ if show_data == True:
 def load_model():
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
+    model(df_model["text"][1])[0]["label"]
     return model
 
-st.header ("Определение тональности текстов")
 df_model = df.copy()
-model(df_model["text"][1])[0]["label"]
 
 lst = []
+
 for i in df_model["text"]:
-  lst.append(model(str(i))[0]["label"])
+    lst.append(model(str(i))[0]["label"])
 df_model["Sentinent"]=pd.DataFrame(lst)
 df_model
