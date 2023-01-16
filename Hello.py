@@ -21,7 +21,7 @@ option = st.sidebar.selectbox('выбрать из списка',
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-if option == 'ГДобро Пожаловать':
+if option == 'Добро Пожаловать':
 	st.write(
 			"""
 				## Описание проекта
