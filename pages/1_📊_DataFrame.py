@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 from urllib.error import URLError
 from transformers import pipeline
 import plotly_express as px
