@@ -24,8 +24,7 @@ if datafile is None:
     
 data = read_data(datafile).copy()
 
-model=pipeline("sentiment-analysis",   
-                      "blanchefort/rubert-base-cased-sentiment")
+model=pipeline("sentiment-analysis","blanchefort/rubert-base-cased-sentiment")
                       
 result = st.sidebar.button('Распознать')
 
