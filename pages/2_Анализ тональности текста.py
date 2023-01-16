@@ -9,7 +9,6 @@ st.markdown("# Анализ тональности такста")
 st.sidebar.markdown( "Анализ тональности такста")
 
 @st.cache(allow_output_mutation=True)
-DATA = ('df.csv')
 
 # Создадим функцию для загрузки данных
 def load_model():
