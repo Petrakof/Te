@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 
 from urllib.error import URLError
-import plotly_express as px
 from transformers import pipeline
 
 st.set_page_config(page_title="Sentiment-analysis", page_icon="📊")
