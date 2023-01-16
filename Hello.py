@@ -21,7 +21,7 @@ def mapping_demo():
     import pandas as pd
     @st.cache
     def read_data(uploaded_file):
-    return pd.read_csv(uploaded_file)
+        return pd.read_csv(uploaded_file)
 
     datafile = st.file_uploader("Загрузите файл csv", ["csv"])
     if datafile is None:
