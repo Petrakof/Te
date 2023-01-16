@@ -3,6 +3,7 @@ import pandas as pd
 from urllib.error import URLError
 from transformers import pipeline
 import plotly.express as px
+from telethon.sync import TelegramClient
 
 st.markdown("# История чата Телеграм 🎉")
 
