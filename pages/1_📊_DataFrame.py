@@ -14,7 +14,7 @@ def load_data():
     return df   
 df = load_data() 
 
-show_data = st.sidebar.checkbox('Show raw data')
+show_data = st.sidebar.success('Show raw data')
 if show_data == True:
     st.subheader('Raw data')
     
