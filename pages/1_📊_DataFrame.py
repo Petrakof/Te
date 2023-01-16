@@ -24,7 +24,7 @@ def load_data():
 
 # Применим функцию 
 df = load_data() 
-show_data = st.sidebar.checkbox('DataFrame')
+
 if show_data == True:
     st.subheader('Raw data')
     
