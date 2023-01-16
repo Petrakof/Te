@@ -61,8 +61,8 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
     )
 page_names_to_funcs = {
     "Главная": intro,
-    "Загрузка истории чатов": mapping_demo,
-    "Диаграммы": plotting_demo,
+    "Загрузка истории чатов": plotting_demo,
+    "Диаграммы": mapping_demo,
    }
 
 demo_name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
