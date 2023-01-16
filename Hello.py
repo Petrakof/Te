@@ -21,6 +21,7 @@ def mapping_demo():
     import streamlit as st
     import pandas as pd
     from transformers import pipeline
+    import time
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     @st.cache
     def read_data(uploaded_file):
