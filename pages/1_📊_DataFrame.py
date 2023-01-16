@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from urllib.error import URLError
 from transformers import pipeline
-import plotly_express as px
+
 
 st.set_page_config(page_title="DataFrame", page_icon="📊")
 
