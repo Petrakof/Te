@@ -8,8 +8,8 @@ st.set_page_config(page_title="Sentiment-analysis", page_icon="📊")
 
 st.markdown("# Sentiment-analysis")
 st.sidebar.header( "Sentiment-analysis")
-st.write(
-    """This demo shows how to use `st.write` to visualize Pandas DataFrames"""
+st.write (
+    """This demo shows how to use `st.write` to visualize Pandas DataFrames""")
 @st.cache(allow_output_mutation=True)
 
 def load_model():
