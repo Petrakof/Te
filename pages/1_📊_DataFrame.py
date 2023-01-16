@@ -22,6 +22,4 @@ def load_data():
     df = pd.read_csv(DATA)
     return df   
 
-# Применим функцию 
-df = load_data() 
 
