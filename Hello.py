@@ -48,7 +48,7 @@ def mapping_demo():
 
 def plotting_demo():
     import streamlit as st
-    port numpy as np
+    import numpy as np
 
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
