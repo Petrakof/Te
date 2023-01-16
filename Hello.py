@@ -2,6 +2,7 @@ import numpy as np
 import streamlit as st
 from transformers import pipeline
 from PIL import  Image
+import plotly_express as px
 
 st.set_page_config(
     page_title="Добро пожаловать",
