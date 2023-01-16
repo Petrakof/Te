@@ -2,8 +2,9 @@ import numpy as np
 import streamlit as st
 from transformers import pipeline
 from PIL import  Image
+
 st.set_page_config(
-    page_title="Анализ тональности текста",
+    page_title="Добро пожаловать",
     page_icon="👋",)
 # Title of the application 
 st.write("# Добро пожаловать! 👋")
