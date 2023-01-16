@@ -14,14 +14,15 @@ st.write(
 )
 
 DATA = ('df.csv')
-columns=['user_id', 'text']
+
 @st.cache # для оптимизации работы приложения
 
 # Создадим функцию для загрузки данных
 def load_data():
-    df = pd.read_csv(DATA, columns)
+    df = pd.read_csv(DATA)
     return df   
 df = load_data() 
+
 show_data = st.sidebar.checkbox('Show raw data')
 if show_data == True:
     st.subheader('Raw data')
