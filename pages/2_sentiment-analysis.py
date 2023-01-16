@@ -16,8 +16,8 @@ def load_model():
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
     return model
-
-model = load_model()
+df_model = df.copy()
+model(df_model["text"][1])[0]["label"]
 st.header ("Определение тональности текстов")
 st.subheader ("Введите текст для анализа")
 text = st.text_area(" ",height=100)
