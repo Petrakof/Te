@@ -4,6 +4,7 @@ import pandas as pd
 import time
 from transformers import pipeline
 from PIL import  Image
+import matplotlib.pyplot as plt
 
 def intro():
     import streamlit as st
