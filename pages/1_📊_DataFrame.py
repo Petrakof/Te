@@ -13,12 +13,13 @@ st.write(
 )
 
 DATA = ('df.csv')
-columns= DATA.append([message.from_id.user_id, message.text]
+
+
 @st.cache # для оптимизации работы приложения
 
 # Создадим функцию для загрузки данных
 def load_data():
-    df = pd.read_csv(DATA, parse_dates=[columns]))
+    df = pd.read_csv(DATA))
     return df   
 
 # Применим функцию 
