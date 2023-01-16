@@ -16,10 +16,6 @@ display = Image.open('images/display.jpg')
 display = np.array(display)
 st.image(display)
 
-def mapping_demo():
-    import streamlit as st
-    import pandas as pd
-    from transformers import pipeline
 @st.cache
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
@@ -27,7 +23,7 @@ def read_data(uploaded_file):
 datafile = st.file_uploader("Загрузите файл csv", ["csv"])
 if datafile is None:
     st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
-    t.stop()
+    st.stop()
 
 data = read_data(datafile).copy()
 
@@ -61,7 +57,7 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
     )
 page_names_to_funcs = {
     "Главная": intro,
-    "Загрузка истории чатов": mapping_demo,
+    "Загрузка истории чатов": read_data,
     "Диаграммы": plotting_demo,
    }
 
