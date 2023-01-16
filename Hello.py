@@ -29,9 +29,8 @@ def mapping_demo():
     datafile = st.sidebar.file_uploader("Загрузите файл csv", ["csv"])
     if datafile is None:
         st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
-        with st.spinner('Wait for it...'):t
-            time.sleep(5)
-        st.success('Done!')
+        st.stop() 
+
 
     data = read_data(datafile).copy()
 
