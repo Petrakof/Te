@@ -12,6 +12,23 @@ display = Image.open('images/display.jpg')
 display = np.array(display)
 st.image(display)
 
+# Sidebar options
+option = st.sidebar.selectbox('выбрать из списка', 
+["Добро Пожаловать",
+ "Определение тональности текста", 
+  "Word Cloud", 
+ ])
+
+st.set_option('deprecation.showfileUploaderEncoding', False)
+
+if option == 'ГДобро Пожаловать':
+	st.write(
+			"""
+				## Описание проекта
+				Это инструмент анализа текста, разработанный группой 32. Доступ к инструментам можно получить на левой боковой панели.
+			"""
+		)
+elif option == "Определение тональности текста":
 @st.cache
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
