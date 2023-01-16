@@ -20,7 +20,7 @@ def mapping_demo():
     import streamlit as st
     import pandas as pd
     from transformers import pipeline
-    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
+    st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     @st.cache
     def read_data(uploaded_file):
         return pd.read_csv(uploaded_file)
@@ -51,7 +51,7 @@ def plotting_demo():
     import time
     import numpy as np
 
-    st.markdown(f'# {list(page_names_to_funcs.keys())[1]}')
+    st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """
         This demo illustrates a combination of plotting and animation with
@@ -61,8 +61,8 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
     )
 page_names_to_funcs = {
     "Главная": intro,
-    "Загрузка истории чатов": plotting_demo,
-    "Диаграммы": mapping_demo,
+    "Загрузка истории чатов": mapping_demo,
+    "Диаграммы": plotting_demo,
    }
 
 demo_name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
