@@ -19,7 +19,7 @@ DATA = ('df.csv')
 
 # Создадим функцию для загрузки данных
 def load_data():
-    df = pd.read_csv(DATA))
+    df = pd.read_csv(DATA)
     return df   
 
 # Применим функцию 
