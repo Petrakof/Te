@@ -4,6 +4,9 @@ from urllib.error import URLError
 from transformers import pipeline
 import plotly.express as px
 
+st.markdown("# Page 2 🎉")
+
+st.sidebar.markdown("# Page 2 🎉")
 DATA = ('df.csv')
 
 @st.cache # для оптимизации работы приложения
@@ -14,7 +17,7 @@ def load_data():
     return df   
 df = load_data() 
 
-show_data = st.sidebar('Show raw data')
+show_data = st.sidebar.checkbox('Show raw data')
 if show_data == True:
     st.subheader('Raw data')
     
