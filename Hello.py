@@ -6,7 +6,8 @@ import time
 from transformers import pipeline
 from PIL import  Image
 import matplotlib.pyplot as plt
-
+import seaborn as sns
+  
 
 
 def intro():
@@ -70,43 +71,7 @@ def filter_demo():
     import pandas as pd
     import matplotlib.pyplot as plt
     import seaborn as sns
-    from pandas.api.types import (
-        is_categorical_dtype,
-        is_datetime64_any_dtype,
-        is_numeric_dtype,
-        is_object_dtype,
-)
-
-
-    st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
-    st.write(
-        """Фильтр данных""")
     
-    @st.experimental_memo
-    def read_data(uploaded_file):
-        return pd.read_csv(uploaded_file)
-    datafile = st.file_uploader("Загрузите файл csv", ["csv"])
-   
-    if datafile is None:
-        st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
-        st.stop() 
-
-    def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-        modify = st.checkbox("Add filters")
-
-        if not modify:
-            return df
-
-        df = df.copy()
-        for col in df.columns:
-          if is_object_dtype(df[col]):
-            try:
-                df[col] = pd.to_datetime(df[col])
-            except Exception:
-                pass
-
-          if is_datetime64_any_dtype(df[col]):
-            df[col] = df[col].dt.tz_localize(None)
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
