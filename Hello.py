@@ -19,7 +19,7 @@ def intro():
 # Title of the application 
     st.write("# Добро пожаловать! 👋")
     st.sidebar.success("Выбрать раздел")
-    
+
     st.markdown(' # Анализ тональности чатов Телеграм\n', )
     st.info("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
 
@@ -94,7 +94,8 @@ def wordcloud():
     from nltk.util import ngrams
     from textblob import TextBlob
     from wordcloud import WordCloud
-def create_wordcloud(text, image_path = None)
+    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
+    def create_wordcloud(text, image_path = None)
     # Constants 
     STOPWORDS = stopwords.words('english')
     STOPWORDS + ['said']
