@@ -53,7 +53,7 @@ def mapping_demo():
 
     st.write(df_model)
     
-
+st.balloons()
 def plotting_demo():
     import streamlit as st
     import numpy as np
