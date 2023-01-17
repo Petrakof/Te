@@ -63,7 +63,7 @@ def mapping_demo():
    
 
     st.subheader("Количество видов сообщений")
-    
+
     chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
     chat_df = chat_df.sort_values(by="index")
     chat_df.columns = ["Sentinent", "Count"]
@@ -75,6 +75,11 @@ def mapping_demo():
         color_discrete_sequence=["#9EE6CF"],)
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
         
+    st.subheader("Самые позитивные user_id")
+    df_P = df_model[df_model["Sentinent"]=="POSITIVE"]
+    df_p =df_P.user_id.value_counts().sort_index()
+    df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
+
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
