@@ -2,15 +2,12 @@ import streamlit as st
 from streamlit_extras.dataframe_explorer import dataframe_explorer
 import numpy as np
 import pandas as pd
-import time
 from transformers import pipeline
 from PIL import  Image
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 import plotly.express as px
   
-
-
 def intro():
     import streamlit as st
     # Title of the application 
