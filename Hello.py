@@ -56,7 +56,10 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-    
+   
+    plt.figure(figsize=(10,7))
+sns.histplot(data=df,
+            x='Price_mean_by_Make', bins = 20);
 def filter_demo():
     import streamlit as st
     from streamlit_extras.dataframe_explorer import dataframe_explorer
