@@ -44,9 +44,9 @@ def mapping_demo():
     result = st.button('Распознать')
     
     st.balloons()
-    filtered_df = dataframe_explorer(df_model )
+    
     df_model = data.copy()
-  
+    filtered_df = dataframe_explorer(df_model)
     if result:
         lst = []
         for i in df_model["text"]:
