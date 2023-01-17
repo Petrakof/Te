@@ -20,7 +20,6 @@ st.image(display)
 
 def mapping_demo():
     import streamlit as st
-    from streamlit_extras.dataframe_explorer import dataframe_explorer
     import pandas as pd
     from transformers import pipeline
     import time
@@ -55,6 +54,7 @@ def mapping_demo():
     st.write(df_model)
     filtered_model = dataframe_explorer(model)
     st.dataframe(filtered_model, use_container_width=True)
+
 def plotting_demo():
     import streamlit as st
     import numpy as np
