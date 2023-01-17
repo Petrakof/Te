@@ -63,6 +63,7 @@ def mapping_demo():
    
 
     st.subheader("Количество видов сообщений")
+    
     chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
     chat_df = chat_df.sort_values(by="index")
     chat_df.columns = ["Sentinent", "Count"]
@@ -77,7 +78,6 @@ def mapping_demo():
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
-
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
