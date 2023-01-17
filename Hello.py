@@ -56,7 +56,7 @@ def mapping_demo():
 
     filtered_df = dataframe_explorer(df_model)
     st.dataframe(filtered_df, use_container_width=True)
-    
+
 def filter_demo():
     import streamlit as st
     from streamlit_extras.dataframe_explorer import dataframe_explorer
@@ -67,7 +67,7 @@ def filter_demo():
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """Фильтр данных""")
-    df_model = data.copy()
+    df_model
     filtered_df = dataframe_explorer(df_model)
     st.dataframe(filtered_df, use_container_width=True)
 
