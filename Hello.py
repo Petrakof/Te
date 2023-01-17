@@ -41,7 +41,7 @@ def mapping_demo():
                       
     result = st.button('Распознать')
     
-    st.balloons()
+    st.snow()
 
     df_model = data.copy()
 
