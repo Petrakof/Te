@@ -6,7 +6,7 @@ import time
 from transformers import pipeline
 from PIL import  Image
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sns; sns.set()
   
 
 
