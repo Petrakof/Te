@@ -42,7 +42,7 @@ def mapping_demo():
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.sidebar.button('Распознать')
-
+    filtered_model = dataframe_explorer(model)
     st.balloons()
 
     df_model = data.copy()
