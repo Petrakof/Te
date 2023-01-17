@@ -66,6 +66,7 @@ def filter_demo():
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """Фильтр данных""")
+    st.write(df_model)
     
 page_names_to_funcs = {
     "Главная 👋": intro,
