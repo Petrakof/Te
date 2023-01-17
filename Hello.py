@@ -46,7 +46,6 @@ def mapping_demo():
     st.balloons()
     
     df_model = data.copy()
-    filtered_df = dataframe_explorer(df_model)
     
     if result:
         lst = []
