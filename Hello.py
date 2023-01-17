@@ -56,7 +56,7 @@ def mapping_demo():
     filtered_df = dataframe_explorer(df_model)
     st.dataframe(filtered_df)
 
-    st.write(df_model)
+   
     
     
 def filter_demo():
