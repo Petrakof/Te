@@ -79,10 +79,50 @@ def mapping_demo():
         df_P = df_model[df_model["Sentinent"]=="POSITIVE"]
         df_p =df_P.user_id.value_counts().sort_index()
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
+# Create a word cloud function 
+def create_wordcloud(text, image_path = None):
+    '''
+    Pass a string to the function and output a word cloud
+    
+    ARGS 
+    text: The text for wordcloud
+    image_path (optional): The image mask with a white background (default None)
+    
+    '''
+    
+    st.write('Creating Word Cloud..')
+
+    text = clean_text(text)
+    
+    if image_path == None:
+        
+        # Generate the word cloud
+        wordcloud = WordCloud(width = 600, height = 600, 
+                    background_color ='white', 
+                    stopwords = STOPWORDS, 
+                    min_font_size = 10).generate(text) 
+    
+    else:
+        mask = np.array(Image.open(image_path))
+        wordcloud = WordCloud(width = 600, height = 600, 
+                    background_color ='white', 
+                    stopwords = STOPWORDS,
+                    mask=mask,
+                    min_font_size = 5).generate(text) 
+    
+    # plot the WordCloud image                        
+    plt.figure(figsize = (8, 8), facecolor = None) 
+    plt.imshow(wordcloud, interpolation = 'nearest') 
+    plt.axis("off") 
+    plt.tight_layout(pad = 0) 
+
+    plt.show()  
+
 
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
+    "create_wordcloud ":create_wordcloud
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
