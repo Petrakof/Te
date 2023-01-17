@@ -54,7 +54,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-
+    lst
 def filter_demo():
     import streamlit as st
     from streamlit_extras.dataframe_explorer import dataframe_explorer
@@ -67,7 +67,7 @@ def filter_demo():
     st.write(
         """Фильтр данных""")
     st.write(df_model)
-    
+
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
