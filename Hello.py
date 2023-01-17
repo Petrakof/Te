@@ -55,7 +55,7 @@ def mapping_demo():
 
     st.write(df_model)
 
-    filtered_df = dataframe_explorer(df_model["Sentinent"])
+    filtered_df = dataframe_explorer(lst)
     st.dataframe(filtered_df)
 
 
