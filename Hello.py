@@ -88,6 +88,10 @@ def create_wordcloud(text, image_path = None):
     from nltk.util import ngrams
     from textblob import TextBlob
     from wordcloud import WordCloud
+
+    # Constants 
+    STOPWORDS = stopwords.words('english')
+    STOPWORDS + ['said']
     '''
     Pass a string to the function and output a word cloud
     
@@ -96,7 +100,6 @@ def create_wordcloud(text, image_path = None):
     image_path (optional): The image mask with a white background (default None)
     
     '''
-    
     st.write('Creating Word Cloud..')
 
     text = clean_text(text)
