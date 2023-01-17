@@ -42,7 +42,7 @@ def mapping_demo():
     if datafile is None:
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
-        st.balloons()
+    st.balloons()
 
     data = read_data(datafile).copy()
    
