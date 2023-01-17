@@ -77,6 +77,8 @@ def filter_demo():
         """Фильтр данных""")
     
     @st.experimental_memo
+    def read_data(uploaded_file):
+        return pd.read_csv(uploaded_file)
     datafile = st.file_uploader("Загрузите файл csv", ["csv"])
    
     if datafile is None:
