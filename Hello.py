@@ -70,7 +70,7 @@ def plotting_demo():
     plt.title("Самые негативные user_id	")        
 page_names_to_funcs = {
     "Главная": intro,
-    "Загрузка истории чатов": mapping_demo,
+    "Загрузка истории чатов 🔭": mapping_demo,
     "Диаграммы": plotting_demo,
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
