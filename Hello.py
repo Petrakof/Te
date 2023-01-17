@@ -44,41 +44,41 @@ def mapping_demo():
         st.stop() 
 
 
-    data = read_data(datafile).copy()
+        data = read_data(datafile).copy()
    
-    model=pipeline("sentiment-analysis",   
+        model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-    result = st.button('Распознать')
-    st.balloons()
+        result = st.button('Распознать')
+        st.balloons()
     
-    df_model = data.copy()
+        df_model = data.copy()
    
-    if result:
-        lst = []
+        if result:
+            lst = []
         for i in df_model["text"]:
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
-    st.write(df_model)
+        st.write(df_model)
    
 
-      st.subheader("Количество видов сообщений")
+        st.subheader("Количество видов сообщений")
 
-      chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
-      chat_df = chat_df.sort_values(by="index")
-      chat_df.columns = ["Sentinent", "Count"]
-      fig = px.bar(
+        chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
+        chat_df = chat_df.sort_values(by="index")
+        chat_df.columns = ["Sentinent", "Count"]
+        fig = px.bar(
         chat_df,
         x="Sentinent",
         y="Count",
         title="Количество видов сообщений",
         color_discrete_sequence=["#9EE6CF"],)
-      st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+        st.plotly_chart(fig, theme="streamlit", use_container_width=True)
         
-      st.subheader("Самые позитивные user_id")
-      df_P = df_model[df_model["Sentinent"]=="POSITIVE"]
-      df_p =df_P.user_id.value_counts().sort_index()
-      df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
+        st.subheader("Самые позитивные user_id")
+        df_P = df_model[df_model["Sentinent"]=="POSITIVE"]
+        df_p =df_P.user_id.value_counts().sort_index()
+        df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 
 page_names_to_funcs = {
     "Главная 👋": intro,
