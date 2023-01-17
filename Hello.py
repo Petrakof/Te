@@ -81,63 +81,41 @@ def mapping_demo():
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 # Create a word cloud function 
 def wordcloud():
-    import streamlit as st
-    import nltk 
-    from nltk.corpus import stopwords
-    from nltk.stem import PorterStemmer
-    from nltk.stem import WordNetLemmatizer
-    from nltk.util import ngrams
-   
-
-    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
+   import nltk 
+   from nltk.corpus import stopwords
+   from nltk.stem import PorterStemmer
+   from nltk.stem import WordNetLemmatizer
+   from nltk.util import ngrams
+   from textblob import TextBlob
+   from wordcloud import WordCloud
+   from gensim import utils
+   import streamlit as st
+   import pprint
+   import gensim
+   import gensim.downloader as api
+   import warnings
+   import spacy
     # Constants 
-    STOPWORDS = stopwords.words('english')
-    STOPWORDS + ['said']
+   STOPWORDS = stopwords.words('english')
+   STOPWORDS + ['said']
+   st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
+   st.header("Generate Word Cloud")
+   st.subheader("Generate a word cloud from text containing the most popular words in the text.")
 
-    def create_wordcloud(text, image_path = None):
-        '''
-    Pass a string to the function and output a word cloud
-    
-    ARGS 
-    text: The text for wordcloud
-    image_path (optional): The image mask with a white background (default None)
-    
-    '''
-    st.write('Creating Word Cloud..')
-    def read_data(uploaded_file):
-        return pd.read_csv(uploaded_file)
-    datafile = st.file_uploader("Загрузите файл csv", ["csv"])
-   
-    if datafile is None:
-        st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
-        st.stop() 
-    
+    # Запросить текст или текстовый файл
+   st.header('Enter text or upload file')
+   text = st.text_area('Type Something', height=400)
 
-    text = pd.DataFrame(datafile, columns=['text'])
-        
-    if image_path == None:
-        
-        # Generate the word cloud
-        wordcloud = WordCloud(width = 600, height = 600, 
-                    background_color ='white', 
-                    stopwords = STOPWORDS, 
-                    min_font_size = 10).generate(text) 
-    
-    else:
-        mask = np.array(Image.open(image_path))
-        wordcloud = WordCloud(width = 600, height = 600, 
-                    background_color ='white', 
-                    stopwords = STOPWORDS,
-                    mask=mask,
-                    min_font_size = 5).generate(text) 
-    
-    # plot the WordCloud image                        
-    plt.figure(figsize = (8, 8), facecolor = None) 
-    plt.imshow(wordcloud, interpolation = 'nearest') 
-    plt.axis("off") 
-    plt.tight_layout(pad = 0) 
+    # Загрузить изображение маски
+   mask = st.file_uploader('Use Image Mask', type = ['jpg'])
 
-    plt.show()  
+    # Добавить функцию кнопки
+   if st.button("Generate Wordcloud"):
+
+        # Создать облако тегов 
+    st.write(len(text))
+    nlp.create_wordcloud(text, mask)    # created in a custom module imported as nlp 
+    st.pyplot()
 
 
 page_names_to_funcs = {
