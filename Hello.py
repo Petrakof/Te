@@ -26,7 +26,8 @@ def mapping_demo():
     from transformers import pipeline
     import time
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
-    @st.cache
+    @st.cache 
+    @st.experimental_memo
     def read_data(uploaded_file):
         return pd.read_csv(uploaded_file)
     datafile = st.file_uploader("Загрузите файл csv", ["csv"])
