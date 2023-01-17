@@ -82,6 +82,7 @@ def mapping_demo():
 # Create a word cloud function 
 def wordcloud():
    import nltk 
+   import TextBlob 
    from nltk.corpus import stopwords
    from nltk.stem import PorterStemmer
    from nltk.stem import WordNetLemmatizer
