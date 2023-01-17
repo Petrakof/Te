@@ -43,7 +43,6 @@ def mapping_demo():
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.button('Распознать')
-    
     st.balloons()
     
     df_model = data.copy()
