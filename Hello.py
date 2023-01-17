@@ -113,9 +113,7 @@ def wordcloud():
    import seaborn as sns
    import spacy_streamlit
    from PIL import Image
-    # Constants 
-   STOPWORDS = stopwords.words('english')
-   STOPWORDS + ['said']
+   
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
    st.header("Generate Word Cloud")
    st.subheader("Generate a word cloud from text containing the most popular words in the text.")
