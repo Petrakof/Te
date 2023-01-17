@@ -42,6 +42,7 @@ def mapping_demo():
                       
     result = st.sidebar.button('Распознать')
     filtered_model = dataframe_explorer(model)
+    st.dataframe(filtered_model, use_container_width=True)
     st.balloons()
 
     df_model = data.copy()
