@@ -108,13 +108,11 @@ def wordcloud():
    from spacy.tokens import Span
    import tempfile
    warnings.filterwarnings(action='ignore')
-
-
-# Data Visualisation 
-import matplotlib.pyplot as plt 
-import seaborn as sns
-import spacy_streamlit
-from PIL import Image
+   # Data Visualisation 
+   import matplotlib.pyplot as plt 
+   import seaborn as sns
+   import spacy_streamlit
+   from PIL import Image
     # Constants 
    STOPWORDS = stopwords.words('english')
    STOPWORDS + ['said']
