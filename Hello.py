@@ -26,7 +26,9 @@ def mapping_demo():
     from streamlit_extras.dataframe_explorer import dataframe_explorer
     import pandas as pd
     from transformers import pipeline
-    import time
+    import matplotlib.pyplot as plt 
+    import seaborn as sns; sns.set()
+
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     @st.cache 
     @st.experimental_memo
@@ -58,8 +60,9 @@ def mapping_demo():
     st.write(df_model)
    
     plt.figure(figsize=(10,7))
-sns.histplot(data=df,
-            x='Price_mean_by_Make', bins = 20);
+    sns.histplot(data=df_model,
+    x='Sentinent', bins = 20);
+
 def filter_demo():
     import streamlit as st
     from streamlit_extras.dataframe_explorer import dataframe_explorer
