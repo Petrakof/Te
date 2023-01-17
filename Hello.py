@@ -41,8 +41,7 @@ def mapping_demo():
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.sidebar.button('Распознать')
-    filtered_model = dataframe_explorer(model)
-    st.dataframe(filtered_model, use_container_width=True)
+    
     st.balloons()
 
     df_model = data.copy()
@@ -54,7 +53,8 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-
+    filtered_model = dataframe_explorer(model)
+    st.dataframe(filtered_model, use_container_width=True)
 def plotting_demo():
     import streamlit as st
     import numpy as np
