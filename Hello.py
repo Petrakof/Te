@@ -94,12 +94,14 @@ def wordcloud():
     from nltk.util import ngrams
     from textblob import TextBlob
     from wordcloud import WordCloud
+
     st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
-    def create_wordcloud(text, image_path = None)
     # Constants 
     STOPWORDS = stopwords.words('english')
     STOPWORDS + ['said']
-    '''
+
+    def create_wordcloud(text, image_path = None):
+        '''
     Pass a string to the function and output a word cloud
     
     ARGS 
