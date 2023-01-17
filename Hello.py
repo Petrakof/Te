@@ -61,8 +61,7 @@ def mapping_demo():
     st.write(df_model)
    
     plt.figure(figsize=(10,7))
-    sns.histplot(data=df_model,
-    x='Sentinent', bins = 20);
+    sns.histplot(data=df_model,x='Sentinent', bins = 20)
 
 def filter_demo():
     import streamlit as st
