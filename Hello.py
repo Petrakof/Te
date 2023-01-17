@@ -82,33 +82,32 @@ def mapping_demo():
 # Create a word cloud function 
 def wordcloud():
    # Standard Libraries
-import os 
-import re 
-import string 
-import numpy as np
-from collections import Counter
-
-# Text Processing Library 
-import nltk 
-from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-from nltk.stem import WordNetLemmatizer
-from nltk.util import ngrams
-from textblob import TextBlob
-from wordcloud import WordCloud
-from gensim import utils
-import streamlit as st
-import pprint
-import gensim
-import gensim.downloader as api
-import warnings
-import spacy
-from spacy import displacy
-from pathlib import Path
-from spacy.matcher import PhraseMatcher, Matcher
-from spacy.tokens import Span
-import tempfile
-warnings.filterwarnings(action='ignore')
+   import os 
+   import re 
+   import string 
+   import numpy as np
+   from collections import Counter
+   # Text Processing Library 
+   import nltk 
+   from nltk.corpus import stopwords
+   from nltk.stem import PorterStemmer
+   from nltk.stem import WordNetLemmatizer
+   from nltk.util import ngrams
+   from textblob import TextBlob
+   from wordcloud import WordCloud
+   from gensim import utils
+   import streamlit as st
+   import pprint
+   import gensim
+   import gensim.downloader as api
+   import warnings
+   import spacy
+   from spacy import displacy
+   from pathlib import Path
+   from spacy.matcher import PhraseMatcher, Matcher
+   from spacy.tokens import Span
+   import tempfile
+   warnings.filterwarnings(action='ignore')
 
 
 # Data Visualisation 
