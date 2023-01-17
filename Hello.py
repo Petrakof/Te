@@ -81,6 +81,13 @@ def mapping_demo():
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 # Create a word cloud function 
 def create_wordcloud(text, image_path = None):
+    import nltk 
+    from nltk.corpus import stopwords
+    from nltk.stem import PorterStemmer
+    from nltk.stem import WordNetLemmatizer
+    from nltk.util import ngrams
+    from textblob import TextBlob
+    from wordcloud import WordCloud
     '''
     Pass a string to the function and output a word cloud
     
