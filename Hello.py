@@ -60,7 +60,7 @@ def mapping_demo():
 
     st.write(df_model)
     df_model.to_csv('data_new.csv', index = False)
-
+    st.stop()
     
 
 def filter_demo():
