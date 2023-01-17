@@ -70,7 +70,7 @@ def filter_demo():
         """Фильтр данных""")
     
     filtered_df = dataframe_explorer(df_model)
-    st.dataframe(filtered_df, use_container_width=True)
+    
     
 
 
