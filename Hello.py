@@ -53,7 +53,7 @@ def mapping_demo():
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
 
-    filtered_df = dataframe_explorer(df_model["Sentinent"])
+    filtered_df = dataframe_explorer(lst)
     st.dataframe(filtered_df)
 
    
