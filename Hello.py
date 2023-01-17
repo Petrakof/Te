@@ -59,7 +59,9 @@ def mapping_demo():
         for i in df_model["text"]:
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
+    st.write(df_model)
 
+    
     st.subheader("Количество видов сообщений")
     chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
     chat_df = chat_df.sort_values(by="index")
