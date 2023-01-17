@@ -8,3 +8,5 @@ plotly
 torch
 seaborn
 matplotlib
+plotly
+
