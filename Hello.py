@@ -76,7 +76,7 @@ def filter_demo():
     st.write(
         """Фильтр данных""")
     
-     @st.experimental_memo
+    @st.experimental_memo
     datafile = st.file_uploader("Загрузите файл csv", ["csv"])
    
     if datafile is None:
