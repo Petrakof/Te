@@ -68,8 +68,9 @@ def filter_demo():
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """Фильтр данных""")
-
-    st.write(df_model)
+    
+    filtered_df = dataframe_explorer(df_model)
+    st.dataframe(filtered_df, use_container_width=True)
     
 
 
