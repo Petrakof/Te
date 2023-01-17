@@ -47,7 +47,6 @@ def mapping_demo():
 
     df_model = data.copy()
   
-
     if result:
         lst = []
         for i in df_model["text"]:
@@ -55,7 +54,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-    filtered_df = dataframe_explorer(df_model)
+    
     
 def filter_demo():
     import streamlit as st
