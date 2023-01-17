@@ -42,7 +42,7 @@ def mapping_demo():
     if datafile is None:
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
-    st.balloons()
+    
 
     data = read_data(datafile).copy()
    
@@ -50,7 +50,7 @@ def mapping_demo():
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.button('Распознать')
-    
+    st.balloons()
     
     df_model = data.copy()
    
