@@ -37,7 +37,7 @@ def mapping_demo():
 
 
     data = read_data(datafile).copy()
-    filtered_data = dataframe_explorer(data)
+   
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
