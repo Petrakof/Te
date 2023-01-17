@@ -22,6 +22,19 @@ def intro():
     display = Image.open('images/display.jpg')
     display = np.array(display)
     st.image(display)
+    from streamlit_extras.let_it_rain import rain
+
+    rain(
+    emoji="⁣⁣⁣🌨🌨🌨🌨🌨🌨🌨🌨
+  🚩   🚩  ❄️
+ ❄️ 🚩🏂    🌲 ⁣
+🌲       🚩   🌲
+🌲🚩      🏂
+ ☃  📍🏁📍  ❄️",
+    font_size=54,
+    falling_speed=5,
+    animation_length="infinite",
+)
 
 def mapping_demo():
     import streamlit as st
@@ -80,7 +93,7 @@ def mapping_demo():
         df_p =df_P.user_id.value_counts().sort_index()
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 # Create a word cloud function 
-def create_wordcloud(text, image_path = None):
+def wordcloud():
     import streamlit as st
     import nltk 
     from nltk.corpus import stopwords
@@ -89,7 +102,7 @@ def create_wordcloud(text, image_path = None):
     from nltk.util import ngrams
     from textblob import TextBlob
     from wordcloud import WordCloud
-
+def create_wordcloud(text, image_path = None)
     # Constants 
     STOPWORDS = stopwords.words('english')
     STOPWORDS + ['said']
@@ -141,7 +154,7 @@ def create_wordcloud(text, image_path = None):
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
-    "create_wordcloud ":create_wordcloud
+    "create_wordcloud ":wordcloud
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
