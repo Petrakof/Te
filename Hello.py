@@ -26,12 +26,6 @@ def intro():
     display = np.array(display)
     st.image(display)
    
-    rain(
-    emoji="⁣⁣⁣❄️",
-    font_size=54,
-    falling_speed=5,
-    animation_length="infinite",
-)
 
 def mapping_demo():
     import streamlit as st
