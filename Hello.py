@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.dataframe_explorer import dataframe_explorer
 import numpy as np
 import pandas as pd
 import time
@@ -20,6 +21,7 @@ st.image(display)
 
 def mapping_demo():
     import streamlit as st
+    from streamlit_extras.dataframe_explorer import dataframe_explorer
     import pandas as pd
     from transformers import pipeline
     import time
@@ -28,13 +30,14 @@ def mapping_demo():
     def read_data(uploaded_file):
         return pd.read_csv(uploaded_file)
     datafile = st.sidebar.file_uploader("Загрузите файл csv", ["csv"])
+   
     if datafile is None:
         st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
         st.stop() 
 
 
     data = read_data(datafile).copy()
-
+    filtered_data = dataframe_explorer(data)
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
