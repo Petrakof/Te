@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit import extra
 from streamlit_extras.dataframe_explorer import dataframe_explorer
 import numpy as np
 import pandas as pd
@@ -13,6 +14,8 @@ import plotly.express as px
 
 def intro():
     import streamlit as st
+    from streamlit import extra
+    from streamlit_extras.let_it_rain import rain
 # Title of the application 
     st.write("# Добро пожаловать! 👋")
     st.sidebar.success("Выбрать раздел")
@@ -22,8 +25,7 @@ def intro():
     display = Image.open('images/display.jpg')
     display = np.array(display)
     st.image(display)
-    from streamlit_extras.let_it_rain import rain
-
+   
     rain(
     emoji="⁣⁣⁣❄️",
     font_size=54,
