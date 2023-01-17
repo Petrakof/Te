@@ -86,7 +86,6 @@ def wordcloud():
    from nltk.stem import PorterStemmer
    from nltk.stem import WordNetLemmatizer
    from nltk.util import ngrams
-   from textblob import TextBlob
    from wordcloud import WordCloud
    from gensim import utils
    import streamlit as st
