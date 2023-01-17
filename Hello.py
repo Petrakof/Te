@@ -7,6 +7,7 @@ from transformers import pipeline
 from PIL import  Image
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
+import plotly.express as px
   
 
 
@@ -29,6 +30,7 @@ def mapping_demo():
     from transformers import pipeline
     import matplotlib.pyplot as plt 
     import seaborn as sns; sns.set()
+    import plotly.express as px
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     @st.cache 
@@ -58,18 +60,19 @@ def mapping_demo():
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
 
-    st.write(df_model)
-    df_model.to_csv('data_new.csv', index = False)
-    st.stop()
-    
-    
     st.subheader("Количество видов сообщений")
-
-    chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
-    st.line_chart(chart_data)
-
+    chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
+    chat_df = chat_df.sort_values(by="index")
+    chat_df.columns = ["Sentinent", "Count"]
+    fig = px.bar(
+        chat_df,
+        x="Sentinent",
+        y="Count",
+        title="Количество видов сообщений",
+        color_discrete_sequence=["#9EE6CF"],
+    )
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+        
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
