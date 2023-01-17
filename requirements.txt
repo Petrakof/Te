@@ -8,5 +8,6 @@ plotly
 torch
 seaborn
 matplotlib
+nltk 
 
 
