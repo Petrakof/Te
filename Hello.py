@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_extras.dataframe_explorer import dataframe_explorer
 import numpy as np
 import pandas as pd
 import time
