@@ -53,9 +53,9 @@ def mapping_demo():
 
     st.write(df_model)
     
-st.balloons()
-def plotting_demo():
+def filter_demo():
     import streamlit as st
+    from streamlit_extras.dataframe_explorer import dataframe_explorer
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -63,16 +63,16 @@ def plotting_demo():
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
         """Фильтр данных""")
+    
+    filtered_df = dataframe_explorer(df_model)
+    st.dataframe(filtered_df, use_container_width=True)
 
-    df_N = df_model[df_model["Sentinent"]=="NEGATIVE"]
-    df_n =df_N.user_id.value_counts().sort_index()
-    df_n.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
-    plt.title("Самые негативные user_id	")        
+
 
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
-    "Фильтр данных 🎯": plotting_demo,
+    "Фильтр данных 🎯": filter_demo,
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
