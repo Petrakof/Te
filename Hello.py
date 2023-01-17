@@ -44,18 +44,18 @@ def mapping_demo():
         st.stop() 
 
 
-        data = read_data(datafile).copy()
+    data = read_data(datafile).copy()
    
-        model=pipeline("sentiment-analysis",   
+    model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-        result = st.button('Распознать')
-        st.balloons()
+    result = st.button('Распознать')
+    st.balloons()
     
-        df_model = data.copy()
+    df_model = data.copy()
    
-        if result:
-            lst = []
+    if result:
+        lst = []
         for i in df_model["text"]:
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
