@@ -60,8 +60,8 @@ def mapping_demo():
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
     st.write(df_model)
+   
 
-def plot_chart(df_model):
     st.subheader("Количество видов сообщений")
     chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
     chat_df = chat_df.sort_values(by="index")
@@ -73,7 +73,20 @@ def plot_chart(df_model):
         title="Количество видов сообщений",
         color_discrete_sequence=["#9EE6CF"],)
     return st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-    st.stop()    
+        
+def plot_chart():
+    st.subheader("Количество видов сообщений")
+    chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
+    chat_df = chat_df.sort_values(by="index")
+    chat_df.columns = ["Sentinent", "Count"]
+    fig = px.bar(
+        chat_df,
+        x="Sentinent",
+        y="Count",
+        title="Количество видов сообщений",
+        color_discrete_sequence=["#9EE6CF"],)
+    return st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+       
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
