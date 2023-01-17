@@ -53,9 +53,12 @@ def mapping_demo():
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
 
-    dataframe_explorer(lst)
     st.write(df_model)
 
+    filtered_df = dataframe_explorer(df_model)
+    st.dataframe(filtered_df, use_container_width=True)
+
+    
 def filter_demo():
     import streamlit as st
     from streamlit_extras.dataframe_explorer import dataframe_explorer
