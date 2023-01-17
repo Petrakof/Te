@@ -62,16 +62,17 @@ def plotting_demo():
 
     st.markdown(f'# {list(page_names_to_funcs.keys())[2]}')
     st.write(
-        """Графики""")
+        """Фильтр данных""")
 
     df_N = df_model[df_model["Sentinent"]=="NEGATIVE"]
     df_n =df_N.user_id.value_counts().sort_index()
     df_n.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
     plt.title("Самые негативные user_id	")        
+
 page_names_to_funcs = {
-    "Главная": intro,
+    "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
-    "Диаграммы": plotting_demo,
+    "Фильтр данных 🎯": plotting_demo,
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
