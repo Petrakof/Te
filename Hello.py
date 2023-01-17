@@ -83,7 +83,8 @@ def mapping_demo():
 def wordcloud():
    import nltk 
    import sys
-   from nltk.corpus import stopwords
+   import re
+   import matplotlib.pyplot as plt 
    from nltk.stem import PorterStemmer
    from nltk.stem import WordNetLemmatizer
    from nltk.util import ngrams
