@@ -62,26 +62,18 @@ def mapping_demo():
     df_model.to_csv('data_new.csv', index = False)
     st.stop()
     
-
-def filter_demo():
-    import streamlit as st
-    from streamlit_extras.dataframe_explorer import dataframe_explorer
-    import numpy as np
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    import seaborn as sns
+    
     st.subheader("Количество видов сообщений")
 
     chart_data = pd.DataFrame(
     np.random.randn(20, 3),
     columns=['a', 'b', 'c'])
-
     st.line_chart(chart_data)
 
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
-    "Фильтр данных 🎯": filter_demo,
+    
    }
 name = st.sidebar.selectbox("Выбрать раздел", page_names_to_funcs.keys())
 page_names_to_funcs[name]()
