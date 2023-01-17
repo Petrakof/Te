@@ -81,21 +81,41 @@ def mapping_demo():
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 # Create a word cloud function 
 def wordcloud():
-   import nltk 
-   import sys
-   import re
-   import matplotlib.pyplot as plt 
-   from nltk.stem import PorterStemmer
-   from nltk.stem import WordNetLemmatizer
-   from nltk.util import ngrams
-   from wordcloud import WordCloud
-   from gensim import utils
-   import streamlit as st
-   import pprint
-   import gensim
-   import gensim.downloader as api
-   import warnings
-   import spacy
+   # Standard Libraries
+import os 
+import re 
+import string 
+import numpy as np
+from collections import Counter
+
+# Text Processing Library 
+import nltk 
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk.util import ngrams
+from textblob import TextBlob
+from wordcloud import WordCloud
+from gensim import utils
+import streamlit as st
+import pprint
+import gensim
+import gensim.downloader as api
+import warnings
+import spacy
+from spacy import displacy
+from pathlib import Path
+from spacy.matcher import PhraseMatcher, Matcher
+from spacy.tokens import Span
+import tempfile
+warnings.filterwarnings(action='ignore')
+
+
+# Data Visualisation 
+import matplotlib.pyplot as plt 
+import seaborn as sns
+import spacy_streamlit
+from PIL import Image
     # Constants 
    STOPWORDS = stopwords.words('english')
    STOPWORDS + ['said']
