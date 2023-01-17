@@ -61,7 +61,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
     st.write(df_model)
 
-    
+
     st.subheader("Количество видов сообщений")
     chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
     chat_df = chat_df.sort_values(by="index")
@@ -74,7 +74,7 @@ def mapping_demo():
         color_discrete_sequence=["#9EE6CF"],
     )
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-        
+    st.stop()    
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
