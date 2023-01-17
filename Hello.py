@@ -102,9 +102,17 @@ def create_wordcloud(text, image_path = None):
     
     '''
     st.write('Creating Word Cloud..')
-
-    text = clean_text(text)
+    def read_data(uploaded_file):
+        return pd.read_csv(uploaded_file)
+    datafile = st.file_uploader("Загрузите файл csv", ["csv"])
+   
+    if datafile is None:
+        st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
+        st.stop() 
     
+
+    text = pd.DataFrame(datafile, columns=['text'])
+        
     if image_path == None:
         
         # Generate the word cloud
