@@ -60,7 +60,7 @@ def mapping_demo():
             lst.append(model(str(i))[0]["label"])
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
-   
+        st.balloons()
 
         st.subheader("Количество видов сообщений")
 
