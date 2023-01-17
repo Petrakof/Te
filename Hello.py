@@ -61,7 +61,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
     st.write(df_model)
 
-    def plot_chart(df):
+    def plot_chart(df_model):
       st.subheader("Количество видов сообщений")
       chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
       chat_df = chat_df.sort_values(by="index")
