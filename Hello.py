@@ -39,7 +39,7 @@ def mapping_demo():
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-    result = st.sidebar.button('Распознать')
+    result = st.button('Распознать')
     
     st.balloons()
 
