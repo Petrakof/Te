@@ -81,6 +81,7 @@ def mapping_demo():
         df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="viridis")
 # Create a word cloud function 
 def create_wordcloud(text, image_path = None):
+    import streamlit as st
     import nltk 
     from nltk.corpus import stopwords
     from nltk.stem import PorterStemmer
