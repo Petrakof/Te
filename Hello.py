@@ -55,7 +55,7 @@ def mapping_demo():
 
     st.write(df_model)
     filtered_df = dataframe_explorer(df_model )
-    st.dataframe(filtered_df, use_container_width=True)
+    st.dataframe(filtered_df)
     
 def filter_demo():
     import streamlit as st
