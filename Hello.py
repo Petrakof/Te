@@ -9,14 +9,14 @@ import matplotlib.pyplot as plt
 def intro():
     import streamlit as st
 # Title of the application 
-st.write("# Добро пожаловать! 👋")
-st.sidebar.success("Выбрать раздел")
-st.markdown('Анализ тональности чатов Телеграм\n', )
-st.info("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
+    st.write("# Добро пожаловать! 👋")
+    st.sidebar.success("Выбрать раздел")
+    st.markdown('Анализ тональности чатов Телеграм\n', )
+    st.info("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
 
-display = Image.open('images/display.jpg')
-display = np.array(display)
-st.image(display)
+    display = Image.open('images/display.jpg')
+    display = np.array(display)
+    st.image(display)
 
 def mapping_demo():
     import streamlit as st
@@ -52,8 +52,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-    filtered_model = dataframe_explorer(model)
-    st.dataframe(filtered_model, use_container_width=True)
+    
 
 def plotting_demo():
     import streamlit as st
