@@ -72,8 +72,8 @@ def mapping_demo():
           y="Count",
           title="Количество видов сообщений",
           color_discrete_sequence=["#9EE6CF"],)
-      st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-      st.stop()    
+      return st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+st.stop()    
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
