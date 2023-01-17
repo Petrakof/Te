@@ -44,7 +44,7 @@ def mapping_demo():
     result = st.button('Распознать')
     
     st.balloons()
-
+    
     df_model = data.copy()
   
     if result:
@@ -54,7 +54,8 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
-    
+    filtered_df = dataframe_explorer(df_model )
+    st.dataframe(filtered_df, use_container_width=True)
     
 def filter_demo():
     import streamlit as st
