@@ -59,10 +59,8 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
 
     st.write(df_model)
+    df_model.to_csv('data_new.csv', index = False)
 
-    st.subheader("Количество видов сообщений")
-    df_s = df_model.groupby(["Sentinent"])["user_id"].count()
-    df_s.plot.bar(edgecolor='k', color = "navy", alpha=0.9)
     
 
 def filter_demo():
@@ -72,7 +70,14 @@ def filter_demo():
     import pandas as pd
     import matplotlib.pyplot as plt
     import seaborn as sns
-    
+    st.subheader("Количество видов сообщений")
+
+    chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+
+    st.line_chart(chart_data)
+
 page_names_to_funcs = {
     "Главная 👋": intro,
     "Загрузка истории чатов 🔭": mapping_demo,
