@@ -86,21 +86,20 @@ def filter_demo():
         st.stop() 
 
     def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-  
-    modify = st.checkbox("Add filters")
+        modify = st.checkbox("Add filters")
 
-    if not modify:
-        return df
+        if not modify:
+            return df
 
-    df = df.copy()
-    for col in df.columns:
-        if is_object_dtype(df[col]):
+        df = df.copy()
+        for col in df.columns:
+          if is_object_dtype(df[col]):
             try:
                 df[col] = pd.to_datetime(df[col])
             except Exception:
                 pass
 
-        if is_datetime64_any_dtype(df[col]):
+          if is_datetime64_any_dtype(df[col]):
             df[col] = df[col].dt.tz_localize(None)
 page_names_to_funcs = {
     "Главная 👋": intro,
