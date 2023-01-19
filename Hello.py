@@ -96,6 +96,7 @@ def wordcloud():
   
    # Data Visualisation 
    import matplotlib.pyplot as plt 
+   from wordcloud import WordCloud 
    from PIL import Image
    
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
