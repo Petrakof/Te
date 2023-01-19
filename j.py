@@ -4,6 +4,7 @@ import pandas as pd
 from transformers import pipeline
 
 from xmlrpc.client import DateTime
+import telethon
 from telethon.sync import TelegramClient
  
 from telethon.tl.functions.messages import GetDialogsRequest
