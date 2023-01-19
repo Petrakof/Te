@@ -53,6 +53,8 @@ def mapping_demo():
    
     data = read_data(datafile).copy()
     
+    
+
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
@@ -62,7 +64,9 @@ def mapping_demo():
     
 
     df_model = data.copy()
-   
+    selected_id = st.selectbox("Select Sex", df_model['id'].unique())
+    st.write(f"Selected Option: {selected_id!r}")
+
     if result:
         lst = []
         for i in df_model["text"]:
