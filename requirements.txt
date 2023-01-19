@@ -10,4 +10,5 @@ seaborn
 matplotlib
 nltk 
 wordcloud
+pymorphy2
 
