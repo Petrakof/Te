@@ -44,7 +44,7 @@ def mapping_demo():
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
     #Индикатор выполнения
-    progress_bar = st.progress(0)
+result = st.button('Распознать')    progress_bar = st.progress(0)
     progress_text = st.empty()
     for i in range(101):
         time.sleep(0.1)
@@ -56,7 +56,7 @@ def mapping_demo():
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
-    result = st.button('Распознать')
+    
     st.balloons()
     
     df_model = data.copy()
