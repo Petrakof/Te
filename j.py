@@ -32,8 +32,8 @@ chat=st.text_input ("Введите свой номер код", "t.me/+KxlX36pb
 
 data = [] 
 
-async with TelegramClient(name, api_id, api_hash) as client:
-    async for message in client.iter_messages(chat, limit=100):
+with TelegramClient(name, api_id, api_hash) as client:
+    for message in client.iter_messages(chat, limit=100):
         data.append([message.from_id.user_id, message.text])
 
 
