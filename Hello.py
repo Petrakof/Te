@@ -92,7 +92,6 @@ def wordcloud():
    import streamlit as st
    import matplotlib.pyplot as plt 
    import telethon
-   import telebot
    import pandas as pd
    from telethon.sync import TelegramClient
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
