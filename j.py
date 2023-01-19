@@ -13,7 +13,7 @@ from telethon.tl.types import PeerChannel
 import csv
 api_id= st.text_input() 
 api_hash = st.text_input('') 
-phone = t.text_input('')
+phone = st.text_input('')
  
 client = TelegramClient(phone, api_id, api_hash)
  
