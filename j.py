@@ -21,6 +21,10 @@ phone = st.text_input ("Введите свой номер телефона", " 
 
 name= st.text_input ("Введите свой ник в Телеграм", "Настя")
 
+async def main():
+    client = TelegramClient(phone, api_id, api_hash)
+    assert await client.connect()
+
 code= st.text_input ("Введите свой код", "    ")
 
 
