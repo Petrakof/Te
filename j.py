@@ -15,20 +15,6 @@ api_id= st.text_input()
 api_hash = st.text_input('') 
 phone = t.text_input('')
  
-# this def gets called when the /telethon command is sent by the user to the bot
-def telethonMessage(update, context):
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    api_id =st.text_input ('API_ID')
-    api_hash = st.text_input('API_HASH')
-    client = TelegramClient('anon', api_id, api_hash, loop=loop)
-    with client:
-        loop.run_until_complete(send_telethon_message(client, update.effective_user.id))
-     
-
-async def send_telethon_message(client, user_id):
-    me = await client.get_me()
-    print('TELETHON: {}', me.username)
-    await client.send_message(user_id, 'Testing Telethon')
-
-
+client = TelegramClient(phone, api_id, api_hash)
+ 
+client.start()
