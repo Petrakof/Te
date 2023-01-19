@@ -22,3 +22,5 @@ await client.start()
 print(await client.get_me())
 
 phone = st.text_input ("Введите свой номер телефона", "    ")
+
+code = st.text_input ("Введите свой номер телефона", "    ")
