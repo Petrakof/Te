@@ -22,7 +22,7 @@ client = TelegramClient(phone, api_id, api_hash)
 client.start()
 
 name = st.text_input ('Введите свой ник в Телеграмм: ', 'Настя')
-chat = st.text_input ('Введите назавание часта в Телеграмм: ','t.me/+KxlX36pb-3hjMjRi')
+chat = st.text_input ('Введите назавание чата в Телеграмм: ','t.me/+KxlX36pb-3hjMjRi')
 
 chats =('Введите свой api_id: ', '29319788')  []
 last_date = None
