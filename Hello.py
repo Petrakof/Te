@@ -105,17 +105,6 @@ def wordcloud():
 
    # Запросить текст или текстовый файл
     
-   @st.experimental_memo
-   def read_data(uploaded_file):
-    return pd.read_csv(uploaded_file)
-   
-   datafile = st.file_uploader("Загрузите файл csv", ["csv"])
-   
-   if datafile is None:
-    st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
-    st.stop() 
-   data = read_data(datafile).copy()
-   stop_words = stopwords.words('russian')
    # Объединяем данные из колонки 'Title'
    text = ' '.join(data['Text'])
    # разбиваем текст на токены
