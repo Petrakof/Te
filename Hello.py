@@ -61,8 +61,6 @@ def mapping_demo():
     result = st.button('Распознать')
     st.balloons()
 
-    
-
     df_model = data.copy()
     
     if result:
