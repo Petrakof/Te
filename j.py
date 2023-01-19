@@ -13,7 +13,7 @@ from telethon.tl.types import PeerChannel
  
 import csv
  
-api_id = 18377495
+api_id=st.text_input ('Enter api_id: ', '18377495')
 api_hash = "a0c785ad0fd3e92e7c131f0a70987987"
 phone = "+79991669331"
  
