@@ -31,6 +31,7 @@ def mapping_demo():
     import matplotlib.pyplot as plt 
     import seaborn as sns; sns.set()
     import plotly.express as px
+    import time
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     @st.cache 
@@ -42,7 +43,12 @@ def mapping_demo():
     if datafile is None:
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
-    
+    progress_bar = st.progress(0)
+    progress_text = st.empty()
+    for i in range(101):
+        time.sleep(0.1)
+        progress_bar.progress(i)
+        progress_text.text(f"Progress: {i}%")
    
     data = read_data(datafile).copy()
     
@@ -63,8 +69,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
-        selected_sex = st.selectbox("Select id", datafile['id'].unique())
-        st.write(f"Selected Option: {selected_sex!r}")
+        
 
         st.subheader("Количество видов сообщений")
 
