@@ -92,17 +92,35 @@ def wordcloud():
    import streamlit as st
    import matplotlib.pyplot as plt 
    import telethon
+   import telebot
    import pandas as pd
    from telethon.sync import TelegramClient
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
    st.header("Generate Word Cloud")
    st.subheader("Generate a word cloud from text containing the most popular words in the text.")
 
-   api_id = "  "
-   api_hash = '   '
-   phone = 'ваш номер телефона, привязанный к профилю'
- 
-   client = TelegramClient(phone, api_id, api_hash)
+     bot = telebot.TeleBot('TOKEN')
+
+     def extract_unique_code(text):
+         #Extracts the unique_code from the sent /start command.
+         return text.split()[1] if len(text.split()) > 1 else None
+
+     def in_storage(unique_code): 
+        # Should check if a unique code exists in storage
+        return True
+
+     def get_username_from_storage(unique_code): 
+    # Does a query to the storage, retrieving the associated username
+    # Should be replaced by a real database-lookup.
+       return "ABC" if in_storage(unique_code) else None
+
+     def save_chat_id(chat_id, username):
+    # Save the chat_id->username to storage
+    # Should be replaced by a real database query.
+      pass
+
+
+
 
 page_names_to_funcs = {
     "Главная 👋": intro,
