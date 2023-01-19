@@ -59,10 +59,10 @@ def mapping_demo():
     result = st.button('Распознать')
     st.balloons()
     
+    df_model = data.copy()
+    
     selected_id = st.selectbox("Выбрать пользователя", df_model['user_id'].unique())
     st.write(f"Выбрать пользователя: {selected_id!r}")   
-
-    df_model = data.copy()
     
     if result:
         lst = []
