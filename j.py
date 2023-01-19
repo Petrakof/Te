@@ -26,8 +26,16 @@ asyncio.run(main())
 
 code=st.text_input ("Введите свой номер код", "")
 
+name=st.text_input ("Введите свой номер код", "Настя")
+
+chat=st.text_input ("Введите свой номер код", "t.me/+KxlX36pb-3hjMjRi")
+
+data = [] 
+
+async with TelegramClient(name, api_id, api_hash) as client:
+    async for message in client.iter_messages(chat, limit=100):
+        data.append([message.from_id.user_id, message.text])
 
 
-
-
+df = pd.DataFrame(data, columns=['user_id', 'text'])
 
