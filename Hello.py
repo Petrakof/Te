@@ -43,6 +43,7 @@ def mapping_demo():
     if datafile is None:
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
+    #Индикатор выполнения
     progress_bar = st.progress(0)
     progress_text = st.empty()
     for i in range(101):
