@@ -24,8 +24,8 @@ async def main():
     await client.start()
 result = st.button('Распознать')
 
-name= st.text_input
-name= st.text_input
+name= st.text_input ("Введите свой ник в Телеграм", "Настя")
+name= st.text_input  ("Введите свой код", "    ")
 name= st.text_input ("Введите свой ник в Телеграм", "Настя")
 code= st.text_input ("Введите свой код", "    ")
 
