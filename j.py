@@ -3,12 +3,10 @@ import numpy as np
 import pandas as pd
 from transformers import pipeline
 from xmlrpc.client import DateTime
+import pandas as pd
+import telethon
 from telethon.sync import TelegramClient
  
-from telethon.tl.functions.messages import GetDialogsRequest
-from telethon.tl.types import InputPeerEmpty
-from telethon.tl.functions.messages import GetHistoryRequest
-from telethon.tl.types import PeerChannel
  
 import csv
 api_id= st.text_input() 
