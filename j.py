@@ -20,8 +20,8 @@ import csv
 def telethonMessage(update, context):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    api_id = secrets.get_var('API_ID')
-    api_hash = secrets.get_var('API_HASH')
+    api_id =st.text_input ('API_ID')
+    api_hash = st.text_input('API_HASH')
     client = TelegramClient('anon', api_id, api_hash, loop=loop)
     with client:
         loop.run_until_complete(send_telethon_message(client, update.effective_user.id))
