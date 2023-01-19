@@ -45,14 +45,16 @@ def mapping_demo():
     
    
     data = read_data(datafile).copy()
-    selected_sex = st.selectbox("Select Sex", titanic_data['sex'].unique())
-    st.write(f"Selected Option: {selected_sex!r}")
+    
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.button('Распознать')
     st.balloons()
-    
+
+    selected_sex = st.selectbox("Select id", datafile['id'].unique())
+    st.write(f"Selected Option: {selected_sex!r}")
+
     df_model = data.copy()
    
     if result:
