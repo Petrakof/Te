@@ -98,20 +98,19 @@ def wordcloud():
    st.header("Generate Word Cloud")
    st.subheader("Generate a word cloud from text containing the most popular words in the text.")
 
-    
-   def extract_unique_code(text):
+def extract_unique_code(text):
     #Extracts the unique_code from the sent /start command.
     return text.split()[1] if len(text.split()) > 1 else None
-   def in_storage(unique_code): 
+def in_storage(unique_code): 
      # Should check if a unique code exists in storage
     return True
 
-   def get_username_from_storage(unique_code): 
+def get_username_from_storage(unique_code): 
     # Does a query to the storage, retrieving the associated username
     # Should be replaced by a real database-lookup.
     return "ABC" if in_storage(unique_code) else None
 
-   def save_chat_id(chat_id, username):
+def save_chat_id(chat_id, username):
     # Save the chat_id->username to storage
     # Should be replaced by a real database query.
     pass
