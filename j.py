@@ -22,6 +22,8 @@ phone = st.text_input ("Введите свой номер телефона", " 
 async def main():
     client = TelegramClient(phone, api_id, api_hash)
     assert await client.connect()
+result = st.button('Распознать')
+
 name= st.text_input
 name= st.text_input
 name= st.text_input ("Введите свой ник в Телеграм", "Настя")
