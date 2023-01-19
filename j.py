@@ -13,25 +13,23 @@ from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import PeerChannel
- 
+from karim.secrets import secrets
 import csv
 
-config = configparser.ConfigParser()
-config.read("config.ini")
-async def main(): 
-     client = TelegramClient(
-     phone=st.text_input ("Введите свой номер телефона", "89112166840"), 
-     api_id=st.text_input ('Введите свой api_id: ',"29319788"  ),
-     api_hash= st.text_input ('Введите свой api_hash: ', 'a0c785ad0fd3e92e7c131f0a70987987'))
+# this def gets called when the /telethon command is sent by the user to the bot
+def telethonMessage(update, context):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    api_id = secrets.get_var('API_ID')
+    api_hash = secrets.get_var('API_HASH')
+    client = TelegramClient('anon', api_id, api_hash, loop=loop)
+    with client:
+        loop.run_until_complete(send_telethon_message(client, update.effective_user.id))
+     
 
-     await client.start()
-asyncio.run(main())
-
-
-code=st.text_input ("Введите свой номер код", "")
-
-name=st.text_input ("Введите свой номер код", "Настя")
-
-chat=st.text_input ("Введите свой номер код", "t.me/+KxlX36pb-3hjMjRi")
+async def send_telethon_message(client, user_id):
+    me = await client.get_me()
+    print('TELETHON: {}', me.username)
+    await client.send_message(user_id, 'Testing Telethon')
 
 
