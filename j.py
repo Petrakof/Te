@@ -21,3 +21,6 @@ phone = st.text_input ("Введите свой номер телефона", " 
 client = TelegramClient(phone, api_id, api_hash)
 client.start()
 
+phone_2 = st.text_input ("Введите свой номер телефона", "    ")
+code= st.text_input ("Введите свой код", "    ")
+
