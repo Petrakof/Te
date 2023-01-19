@@ -8,7 +8,6 @@ from xmlrpc.client import DateTime
 import telethon
 from telethon.sync import TelegramClient
 from telethon import connection
-y
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty
 from telethon.tl.functions.messages import GetHistoryRequest
