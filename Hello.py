@@ -69,9 +69,6 @@ def mapping_demo():
         st.write(df_model)
         st.balloons()
 
-        selected_id = st.selectbox("Выбрать пользователя", df_model['user_id'].unique())
-        st.write(f"Выбрать пользователя: {selected_id!r}")             
-
         st.subheader("Количество видов сообщений")
 
         chat_df = pd.DataFrame(df_model["Sentinent"].dropna().value_counts()).reset_index()
