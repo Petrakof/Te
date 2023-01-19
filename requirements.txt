@@ -9,5 +9,5 @@ torch
 seaborn
 matplotlib
 nltk 
-wordcloud==1.8.0
+wordcloud
 
