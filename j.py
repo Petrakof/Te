@@ -2,19 +2,19 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from transformers import pipeline
-import asyncio
-import ctypes.util
-import configparser
 from xmlrpc.client import DateTime
-import telethon
 from telethon.sync import TelegramClient
-from telethon import connection
+ 
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import PeerChannel
+ 
 import csv
-
+api_id= st.text_input() 
+api_hash = st.text_input('') 
+phone = t.text_input('')
+ 
 # this def gets called when the /telethon command is sent by the user to the bot
 def telethonMessage(update, context):
     loop = asyncio.new_event_loop()
