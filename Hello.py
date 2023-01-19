@@ -53,15 +53,15 @@ def mapping_demo():
    
     data = read_data(datafile).copy()
     
-    selected_id = st.selectbox("Select Sex", df_model['user_id'].unique())
-    st.write(f"Выбрать пользователя: {selected_id!r}")   
-
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
     result = st.button('Распознать')
     st.balloons()
-
+    
+    selected_id = st.selectbox("Select Sex", df_model['user_id'].unique())
+    st.write(f"Выбрать пользователя: {selected_id!r}")   
+    
     df_model = data.copy()
     
     if result:
