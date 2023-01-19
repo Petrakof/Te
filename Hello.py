@@ -61,9 +61,6 @@ def mapping_demo():
     
     df_model = data.copy()
     
-    selected_id = st.selectbox("Выбрать пользователя", df_model['user_id'].unique())
-    st.write(f"Выбрать пользователя: {selected_id!r}")   
-    
     if result:
         lst = []
         for i in df_model["text"]:
@@ -71,7 +68,9 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
-               
+
+        selected_id = st.selectbox("Выбрать пользователя", df_model['user_id'].unique())
+        st.write(f"Выбрать пользователя: {selected_id!r}")             
 
         st.subheader("Количество видов сообщений")
 
