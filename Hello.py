@@ -114,9 +114,10 @@ def wordcloud():
    if datafile is None:
     st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
     st.stop() 
+   data = read_data(datafile).copy()
    stop_words = stopwords.words('russian')
    # Объединяем данные из колонки 'Title'
-   text = ' '.join(datafile['Text'])
+   text = ' '.join(data['Text'])
    # разбиваем текст на токены
    # в результате получаем переменную типа list со списком токенов
    text = word_tokenize(text)
