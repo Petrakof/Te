@@ -19,13 +19,13 @@ api_hash = st.text_input ('Введите свой api_hash: ', ' a0c785ad0fd3e9
 
 phone = st.text_input ("Введите свой номер телефона", "    ")
 
-name= st.text_input ("Введите свой ник в Телеграм", "Настя")
-
 async def main():
     client = TelegramClient(phone, api_id, api_hash)
     assert await client.connect()
-
-    code= st.text_input ("Введите свой код", "    ")
+name= st.text_input
+name= st.text_input
+name= st.text_input ("Введите свой ник в Телеграм", "Настя")
+code= st.text_input ("Введите свой код", "    ")
 
 
 
