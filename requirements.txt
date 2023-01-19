@@ -10,6 +10,4 @@ seaborn
 matplotlib
 nltk 
 wordcloud==1.8.0
-textblob==0.15.3
-
 
