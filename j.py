@@ -4,6 +4,7 @@ import pandas as pd
 from transformers import pipeline
 import asyncio
 import ctypes.util
+import configparser
 from xmlrpc.client import DateTime
 import telethon
 from telethon.sync import TelegramClient
@@ -15,7 +16,8 @@ from telethon.tl.types import PeerChannel
  
 import csv
 
-
+config = configparser.ConfigParser()
+config.read("config.ini")
 async def main(): 
      client = TelegramClient(
      phone=st.text_input ("Введите свой номер телефона", "89112166840"), 
