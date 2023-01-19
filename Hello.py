@@ -52,8 +52,7 @@ def mapping_demo():
     result = st.button('Распознать')
     st.balloons()
 
-    selected_sex = st.selectbox("Select id", datafile['id'].unique())
-    st.write(f"Selected Option: {selected_sex!r}")
+    
 
     df_model = data.copy()
    
@@ -64,6 +63,8 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
+        selected_sex = st.selectbox("Select id", datafile['id'].unique())
+        st.write(f"Selected Option: {selected_sex!r}")
 
         st.subheader("Количество видов сообщений")
 
