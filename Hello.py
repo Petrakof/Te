@@ -71,8 +71,7 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
-        st.stop()
-         
+               
 
         st.subheader("Количество видов сообщений")
 
