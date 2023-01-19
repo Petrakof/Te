@@ -92,12 +92,17 @@ def wordcloud():
    import streamlit as st
    import matplotlib.pyplot as plt 
    import telethon
-   
+   import pandas as pd
+   from telethon.sync import TelegramClient
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
    st.header("Generate Word Cloud")
    st.subheader("Generate a word cloud from text containing the most popular words in the text.")
 
-   
+   api_id = "  "
+   api_hash = '   '
+   phone = 'ваш номер телефона, привязанный к профилю'
+ 
+client = TelegramClient(phone, api_id, api_hash)
 
 page_names_to_funcs = {
     "Главная 👋": intro,
