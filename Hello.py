@@ -93,14 +93,14 @@ def wordcloud():
    from nltk.stem import PorterStemmer
    from nltk.stem import WordNetLemmatizer
    import pandas as pd
-   from wordcloud import WordCloud
-   from gensim import utils
+      from gensim import utils
    import streamlit as st
    import pymorphy2
    from nltk.tokenize import word_tokenize 
   
    # Data Visualisation 
    import matplotlib.pyplot as plt 
+   from wordcloud import WordCloud
    from PIL import Image
    
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
