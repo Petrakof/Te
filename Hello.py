@@ -111,12 +111,13 @@ def wordcloud():
    @st.experimental_memo
    def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
-   stop_words = stopwords.words('russian')
+   
    datafile = st.file_uploader("Загрузите файл csv", ["csv"])
    
    if datafile is None:
     st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
     st.stop() 
+   stop_words = stopwords.words('russian')
    # Объединяем данные из колонки 'Title'
    text = ' '.join(datafile['Text'])
    # разбиваем текст на токены
