@@ -24,3 +24,16 @@ client.start()
 phone = st.text_input ("Введите свой номер телефона", "    ")
 
 code = st.text_input ("Введите свой номер телефона", "    ")
+
+print(client.get_me().stringify())
+
+client.send_message('username', 'Hello! Talking to you from Telethon')
+client.send_file('username', '/home/myself/Pictures/holidays.jpg')
+
+client.download_profile_photo('me')
+messages = client.get_messages('username')
+messages[0].download_media()
+
+@client.on(events.NewMessage(pattern='(?i)hi|hello'))
+async def handler(event):
+    await event.respond('Hey!')
