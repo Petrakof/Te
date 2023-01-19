@@ -21,7 +21,7 @@ client = TelegramClient(phone, api_id, api_hash)
  
 client.start()
 
-chats =('Введите свой api_id: ', '29319788')  []
+4chats =('Введите свой api_id: ', '29319788')  []
 last_date = None
 chunk_size = 200
 groups=[]
