@@ -90,21 +90,8 @@ def mapping_demo():
 def wordcloud():
    # Standard Libraries
    import streamlit as st
-   import os 
-   import re 
-   import string 
-   import numpy as np
-   from collections import Counter
-   # Text Processing Library 
-   from nltk.corpus import stopwords
-   import pandas as pd
-   import pymorphy2
-   from nltk.tokenize import word_tokenize 
-  
-   # Data Visualisation 
    import matplotlib.pyplot as plt 
-   from wordcloud import WordCloud 
-   from PIL import Image
+   import telethon
    
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
    st.header("Generate Word Cloud")
