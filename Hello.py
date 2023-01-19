@@ -94,45 +94,59 @@ def wordcloud():
    from nltk.stem import WordNetLemmatizer
    from nltk.util import ngrams
    from textblob import TextBlob
+   import pandas as pd
    from wordcloud import WordCloud
    from gensim import utils
    import streamlit as st
-   import pprint
-   import gensim
-   import gensim.downloader as api
-   import warnings
-   import spacy
-   from spacy import displacy
-   from pathlib import Path
-   from spacy.matcher import PhraseMatcher, Matcher
-   from spacy.tokens import Span
-   import tempfile
-   warnings.filterwarnings(action='ignore')
+   import pymorphy2
+   from nltk.tokenize import word_tokenize 
+  
    # Data Visualisation 
    import matplotlib.pyplot as plt 
-   import seaborn as sns
-   import spacy_streamlit
    from PIL import Image
    
    st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
    st.header("Generate Word Cloud")
    st.subheader("Generate a word cloud from text containing the most popular words in the text.")
 
-    # Запросить текст или текстовый файл
-   st.header('Enter text or upload file')
-   text = st.text_area('Type Something', height=400)
+   # Запросить текст или текстовый файл
+    
+   @st.experimental_memo
+   def read_data(uploaded_file):
+    return pd.read_csv(uploaded_file)
+   stop_words = stopwords.words('russian')
+   datafile = st.file_uploader("Загрузите файл csv", ["csv"])
+   
+   if datafile is None:
+    st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
+    st.stop() 
+   # Объединяем данные из колонки 'Title'
+   text = ' '.join(datafile['Text'])
+   # разбиваем текст на токены
+   # в результате получаем переменную типа list со списком токенов
+   text = word_tokenize(text)
+   # инициализируем лемматайзер MorphAnalyzer()
+   lemmatizer = pymorphy2.MorphAnalyzer()
+   # функция для лемматизации текста, на вхд принимает список токенов 
+   def lemmatize_text(tokens):
+    # создаем переменную для хранения преобразованного текста
+    text_new=''
+    # для каждого токена в тексте
+    for word in tokens:
+        # с помощью лемматайзера получаем основную форму
+        word = lemmatizer.parse(word)
+        # добавляем полученную лемму в переменную с преобразованным текстом
+        text_new = text_new + ' ' + word[0].normal_form
+    # возвращаем преобразованный текст
+    return text_new
+ 
+    # вызываем функцию лемматизации для списка токенов исходного текста
+   text = lemmatize_text(text)
 
-    # Загрузить изображение маски
-   mask = st.file_uploader('Use Image Mask', type = ['jpg'])
-
-    # Добавить функцию кнопки
-   if st.button("Generate Wordcloud"):
-
-        # Создать облако тегов 
-    st.write(len(text))
-    nlp.create_wordcloud(text, mask)    # created in a custom module imported as nlp 
-    st.pyplot()
-
+    # генерируем облако слов
+   cloud = WordCloud(stopwords=stop_words).generate(text)
+   plt.imshow(cloud)
+   plt.axis('off')
 
 page_names_to_funcs = {
     "Главная 👋": intro,
