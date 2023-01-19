@@ -19,7 +19,7 @@ api_hash = st.text_input ('Введите свой api_hash: ', ' a0c785ad0fd3e9
 phone = st.text_input ("Введите свой номер телефона", "    ")
 
 await client.start()
-rint(await client.get_me())
+print(await client.get_me())
 
 phone = st.text_input ("Введите свой номер телефона", "    ")
 client = TelegramClient(phone, api_id, api_hash)
