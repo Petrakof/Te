@@ -43,9 +43,10 @@ def mapping_demo():
         st.info("""Загрузите набор данных (.csv), чтобы приступить к работе.""")
         st.stop() 
     
-
-    data = read_data(datafile).copy()
    
+    data = read_data(datafile).copy()
+    selected_sex = st.selectbox("Select Sex", titanic_data['sex'].unique())
+    st.write(f"Selected Option: {selected_sex!r}")
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
                       
