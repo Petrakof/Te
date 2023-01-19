@@ -70,7 +70,9 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
-        
+    
+        selected_id = st.selectbox("Select Sex", df_model['user_id'].unique())
+        st.write(f"Selected Option: {selected_id!r}")    
 
         st.subheader("Количество видов сообщений")
 
