@@ -53,7 +53,8 @@ def mapping_demo():
    
     data = read_data(datafile).copy()
     
-    
+    selected_id = st.selectbox("Select Sex", df_model['user_id'].unique())
+    st.write(f"Выбрать пользователя: {selected_id!r}")   
 
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
@@ -70,9 +71,8 @@ def mapping_demo():
             df_model["Sentinent"]=pd.DataFrame(lst)
         st.write(df_model)
         st.balloons()
-    
-        selected_id = st.selectbox("Select Sex", df_model['user_id'].unique())
-        st.write(f"Selected Option: {selected_id!r}")    
+        st.stop()
+         
 
         st.subheader("Количество видов сообщений")
 
