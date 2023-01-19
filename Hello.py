@@ -102,7 +102,7 @@ def wordcloud():
    api_hash = '   '
    phone = 'ваш номер телефона, привязанный к профилю'
  
-client = TelegramClient(phone, api_id, api_hash)
+   client = TelegramClient(phone, api_id, api_hash)
 
 page_names_to_funcs = {
     "Главная 👋": intro,
