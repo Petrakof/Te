@@ -13,7 +13,6 @@ from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.types import PeerChannel
-from karim.secrets import secrets
 import csv
 
 # this def gets called when the /telethon command is sent by the user to the bot
