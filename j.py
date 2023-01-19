@@ -8,7 +8,7 @@ from xmlrpc.client import DateTime
 import telethon
 from telethon.sync import TelegramClient
 from telethon import connection
-
+y
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty
 from telethon.tl.functions.messages import GetHistoryRequest
@@ -21,7 +21,9 @@ phone = st.text_input ("Введите свой номер телефона", "8
 proxy = (proxy_server, proxy_port, proxy_key)
 
 async def main():
-    client = TelegramClient(phone, api_id, api_hash)
+    client = TelegramClient(phone=st.text_input ("Введите свой номер телефона", "89112166840"), 
+     api_id=st.text_input ('Введите свой api_id: ',"29319788"  ),
+     api_hash= st.text_input ('Введите свой api_hash: ', 'a0c785ad0fd3e92e7c131f0a70987987'))
     await client.start()
 asyncio.run(main())
 
