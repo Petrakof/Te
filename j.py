@@ -2,7 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from transformers import pipeline
-
+import asyncio
+import ctypes.util
 from xmlrpc.client import DateTime
 import telethon
 from telethon.sync import TelegramClient
