@@ -82,6 +82,7 @@ def mapping_demo():
 # Create a word cloud function 
 def wordcloud():
    # Standard Libraries
+   import streamlit as st
    import os 
    import re 
    import string 
@@ -93,8 +94,6 @@ def wordcloud():
    from nltk.stem import PorterStemmer
    from nltk.stem import WordNetLemmatizer
    import pandas as pd
-      from gensim import utils
-   import streamlit as st
    import pymorphy2
    from nltk.tokenize import word_tokenize 
   
