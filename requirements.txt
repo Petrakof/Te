@@ -10,5 +10,11 @@ seaborn
 matplotlib
 nltk 
 WordCloud
+wordCloud
 pymorphy2
+re
+
+
+
+
 
