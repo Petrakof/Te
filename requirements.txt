@@ -8,9 +8,8 @@ plotly
 torch
 seaborn
 matplotlib
-wordcloud==1.8.0
-nltk 
-pymorphy2
+wordcloud
+
 
 
 
