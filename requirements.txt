@@ -9,7 +9,6 @@ torch
 seaborn
 matplotlib
 nltk 
-WordCloud
 pymorphy2
 
 
