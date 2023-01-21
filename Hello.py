@@ -5,12 +5,6 @@ from transformers import pipeline
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-import pymorphy2
-import nltk
-import re
-
-
-
 
 #загружаю модель
 
