@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from transformers import pipeline
+import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
