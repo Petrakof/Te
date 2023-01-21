@@ -36,7 +36,7 @@ for i in range(101):
     time.sleep(0.1)
 progress_bar.progress(i)
 progress_text.text(f"Progress: {i}%")
-
+st.balloons()
 df_model = data.copy()
 
 if result:
