@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
+from wordcloud import WordCloud
 from transformers import pipeline
 import matplotlib.pyplot as plt
 import seaborn as sns
-import WordCloud
-from wordcloud import WordCloud
 import numpy as np
+import pymorphy2
+import nltk
 
 
 
