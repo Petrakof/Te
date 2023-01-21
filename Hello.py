@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 import numpy as np
+import time
 
 
 
@@ -25,6 +26,12 @@ model=pipeline("sentiment-analysis",
                       "blanchefort/rubert-base-cased-sentiment")
                       
 result = st.sidebar.button('🤗Распознать')
+progress_bar = st.progress(0)
+progress_text = st.empty()
+for i in range(101):
+    time.sleep(0.1)
+    progress_bar.progress(i)
+    progress_text.text(f"Progress: {i}%")
 
 df_model = data.copy()
 
