@@ -35,29 +35,30 @@ if result:
 
 
 # Это вкладки
-import streamlit as st
-tab1, tab2, tab3 = st.tabs(["Загруженные данные", "Данные после обучения", "Анализ настроений"])
-@st.cache
-def compute_tab1():
-    tab1.subheader("Загруженные данные")
-    tab1.write(data)
-def compute_tab2():
-    tab2.subheader("Данные после обучения")
 
-with tab2:
-    with st.expander("Все сообщения"):
-        st.write(df_model)
-    with st.expander("🙁 Негативные сообщения"):
-        st.write(df_model[df_model["Sentinent"]=="NEGATIVE"])
-    with st.expander("🙃 Позитивные  сообщения"):
-        st.write(df_model[df_model["Sentinent"]=="POSITIVE"])
-    with st.expander("😐 Нейтральные сообщения"):
-        st.write(df_model[df_model["Sentinent"]=="NEUTRAL"])
+    tab1, tab2, tab3 = st.tabs(["Загруженные данные", "Данные после обучения", "Анализ настроений"])
+    @st.cache
+    def compute_tab1():
+        tab1.subheader("Загруженные данные")
+        tab1.write(data)
 
-def compute_tab3():
-    tab3.subheader("Анализ настроений")
-with tab3:
-    st.subheader("Распределение тональности сообщений")
+    def compute_tab2():
+        tab2.subheader("Данные после обучения")
+
+    with tab2:
+        with st.expander("Все сообщения"):
+            st.write(df_model)
+        with st.expander("🙁 Негативные сообщения"):
+            st.write(df_model[df_model["Sentinent"]=="NEGATIVE"])
+        with st.expander("🙃 Позитивные  сообщения"):
+            st.write(df_model[df_model["Sentinent"]=="POSITIVE"])
+        with st.expander("😐 Нейтральные сообщения"):
+            st.write(df_model[df_model["Sentinent"]=="NEUTRAL"])
+
+    def compute_tab3():
+        tab3.subheader("Анализ настроений")
+    with tab3:
+        st.subheader("Распределение тональности сообщений")
     col1, col2 = st.columns(2)
     with col1:
         #Первый график
