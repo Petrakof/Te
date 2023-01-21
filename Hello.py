@@ -35,7 +35,7 @@ if result:
 
 
 # Это вкладки
-
+import streamlit as st
 tab1, tab2, tab3 = st.tabs(["Загруженные данные", "Данные после обучения", "Анализ настроений"])
 @st.cache
 def compute_tab1():
