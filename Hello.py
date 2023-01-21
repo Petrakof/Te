@@ -3,12 +3,14 @@ import pandas as pd
 from transformers import pipeline
 import matplotlib.pyplot as plt
 import seaborn as sns
+import WordCloud
 from wordcloud import WordCloud
 import numpy as np
 
 
 
 #загружаю модель
+
 @st.experimental_memo
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
