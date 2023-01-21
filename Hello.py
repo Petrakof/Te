@@ -59,7 +59,7 @@ with tab2:
         st.write(df_model)
     with st.expander("🙁 Негативные сообщения"):
         st.write(df_model[df_model["Sentinent"]=="NEGATIVE"])
-    with st.expander("🙃 Позитивные  сообщения"):
+    with st.expander("🙃 Позитивные сообщения"):
         st.write(df_model[df_model["Sentinent"]=="POSITIVE"])
     with st.expander("Нейтральные сообщения"):
         st.write(df_model[df_model["Sentinent"]=="NEUTRAL"])
