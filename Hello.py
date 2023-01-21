@@ -18,6 +18,12 @@ datafile = st.sidebar.file_uploader("Загрузите файл csv", ["csv"])
 if datafile is None:
     st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
     st.stop()
+progress_bar = st.progress(0)
+progress_text = st.empty()
+for i in range(101):
+    time.sleep(0.1)
+    progress_bar.progress(i)
+    progress_text.text(f"Progress: {i}%")
 
 data = read_data(datafile).copy()
 
@@ -26,12 +32,7 @@ model=pipeline("sentiment-analysis",
                       "blanchefort/rubert-base-cased-sentiment")
                       
 result = st.sidebar.button('🤗Распознать')
-progress_bar = st.progress(0)
-progress_text = st.empty()
-for i in range(101):
-    time.sleep(0.1)
-    progress_bar.progress(i)
-    progress_text.text(f"Progress: {i}%")
+
 
 df_model = data.copy()
 
