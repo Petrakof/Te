@@ -1,14 +1,12 @@
-streamlit==1.17
-streamlit-extras
-transformers
-tensorflow-cpu
-protobuf==3.19
-telethon
-plotly
-torch
-seaborn
+стримлит == 1.17.0
+трансформеры
+тензорный поток-процессор
+протобаф==3.20.1
 matplotlib
-wordcloud
+морской
+сюжетно
+облако слов
+пустышка
 
 
 
