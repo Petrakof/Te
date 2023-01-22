@@ -1,12 +1,12 @@
-стримлит == 1.17.0
-трансформеры
-тензорный поток-процессор
-протобаф==3.20.1
+streamlit==1.17.0
+transformers
+tensorflow-cpu
+protobuf==3.20.1
 matplotlib
-морской
-сюжетно
-облако слов
-пустышка
+seaborn
+plotly
+wordcloud
+numpy
 
 
 
