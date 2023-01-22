@@ -6,6 +6,7 @@ import seaborn as sns
 from wordcloud import WordCloud
 import numpy as np
 import time
+from PIL import  Image
 
 # Title of the application 
 st.write("# Добро пожаловать! 👋")
