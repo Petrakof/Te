@@ -1,6 +1,6 @@
 streamlit==1.17.0
 transformers
-tensorflow-cpu==2.11.0
+tensorflow-cpu==2.10.0
 protobuf==3.20.1
 matplotlib
 seaborn
