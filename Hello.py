@@ -7,9 +7,19 @@ from wordcloud import WordCloud
 import numpy as np
 import time
 
+# Title of the application 
+st.write("# Добро пожаловать! 👋")
+
+st.markdown(' # Анализ тональности чатов Телеграм\n', )
+st.info("Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
+
+display = Image.open('images/display.jpg')
+display = np.array(display)
+st.image(display)
 
 
 #загружаю модель
+@st.experimental_memo
 @st.cache
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
