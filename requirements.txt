@@ -1,14 +1,12 @@
-streamlit==1.17
-streamlit-extras
+streamlit==1.17.0
 transformers
 tensorflow-cpu
-protobuf==3.19
-telethon
-plotly
-torch
-seaborn
+protobuf==3.20.1
 matplotlib
+seaborn
+plotly
 wordcloud
+numpy
 
 
 
