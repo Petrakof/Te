@@ -1,18 +1,15 @@
-import streamlit as st
+iimport streamlit as st
 import pandas as pd
 from transformers import pipeline
-import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 import numpy as np
-import time
 
 
 
 #загружаю модель
 @st.cache
-@st.experimental_memo
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
@@ -20,7 +17,6 @@ datafile = st.sidebar.file_uploader("Загрузите файл csv", ["csv"])
 if datafile is None:
     st.info("""Загрузите набор данных (.csv) на боковой панели, чтобы приступить к работе.""")
     st.stop()
-  
 
 data = read_data(datafile).copy()
 dat = data.dropna(axis='index', how='any', subset=['text'])
@@ -31,13 +27,6 @@ model=pipeline("sentiment-analysis",
                       
 result = st.sidebar.button('🤗Распознать')
 
-progress_bar = st.progress(0)
-progress_text = st.empty()
-for i in range(101):
-    time.sleep(0.1)
-progress_bar.progress(i)
-progress_text.text(f"Progress: {i}%")
-st.balloons()
 df_model = dat.copy()
 
 if result:
@@ -60,7 +49,7 @@ with tab2:
         st.write(df_model)
     with st.expander("🙁 Негативные сообщения"):
         st.write(df_model[df_model["Sentinent"]=="NEGATIVE"])
-    with st.expander("🙃 Позитивные сообщения"):
+    with st.expander("🙃 Позитивные  сообщения"):
         st.write(df_model[df_model["Sentinent"]=="POSITIVE"])
     with st.expander("Нейтральные сообщения"):
         st.write(df_model[df_model["Sentinent"]=="NEUTRAL"])
