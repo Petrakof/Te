@@ -23,6 +23,7 @@ if datafile is None:
   
 
 data = read_data(datafile).copy()
+dat = data.dropna(axis='index', how='any', subset=['text'])
 
 #обучение модели
 model=pipeline("sentiment-analysis",   
@@ -37,7 +38,7 @@ for i in range(101):
 progress_bar.progress(i)
 progress_text.text(f"Progress: {i}%")
 st.balloons()
-df_model = data.copy()
+df_model = dat.copy()
 
 if result:
     lst = []
