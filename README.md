@@ -1,5 +1,5 @@
 # Web-приложение для определения тональности чата Телеграм
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=First+line+of+text;Second+line+of+text)](https://git.io/typing-svg)
+
 ## Над проектом работали:
 
 Группа 32: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.
