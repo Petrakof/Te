@@ -22,4 +22,4 @@ Web-приложение для определения тональности т
 [Ссылка на развернутое приложение](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/).
 
 ## Использованная литература
-[Ссылка на документацию streamlit] https://docs.streamlit.io/
+[Ссылка на документацию streamlit] (https://docs.streamlit.io/)
