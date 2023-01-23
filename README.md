@@ -23,3 +23,4 @@ Web-приложение для определения тональности т
 
 ## Использованная литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
+* [Ссылка на документацию huggingface](https://huggingface.co/blanchefort/rubert-base-cased-sentiment)
