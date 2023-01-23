@@ -21,7 +21,7 @@ st.image(display)
 
 #загружаю модель
 @st.experimental_memo
-@st.cache (allow_output_mutation = True)
+
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
 
