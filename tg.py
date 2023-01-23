@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from telethon.sync import TelegramClient
+from telethon import TelegramClient
 
 
 api_id=st.text_input("api_id",   ) 
