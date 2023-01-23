@@ -19,8 +19,6 @@ Web-приложение для определения тональности т
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
 
-[Ссылка на развернутое приложение](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/).
-
 ## Использованная литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
 * [Ссылка на документацию huggingface](https://huggingface.co/blanchefort/rubert-base-cased-sentiment)
