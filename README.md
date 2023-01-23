@@ -12,7 +12,7 @@
 ```python
 pip install telethon
 ```
-[Ссылка на код парсинга Телеграм](https://github.com/smirnovaanastasia1234/Te/blob/main/pars_teleg.py )
+ - Применить [код парсинга Телеграм](https://github.com/smirnovaanastasia1234/Te/blob/main/pars_teleg.py ) который расположен в данном репозитории
 
 Web-приложение для определения тональности текста. Используются библиотеки:
 
