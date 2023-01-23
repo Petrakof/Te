@@ -21,19 +21,13 @@ Web-приложение разделяет сообщения выгружен�
     1: POSITIVE
     2: NEGATIVE
 
-Используются библиотеки:
-- [TensorFlow](https://www.tensorflow.org/).
-- [Streamlit](https://streamlit.io/).
-
-Для распознавания текста используется модель DeepPavlov/rubert-base-case-conversational (https://huggingface.co/DeepPavlov/rubert-base-cased-conversational/)
-
-- ["sentiment-analysis","blanchefort/rubert-base-cased-sentiment"](https://huggingface.co/DeepPavlov/rubert-base-cased-conversational/).
-
 ## Streamlit app
 
 Приложение можно найти , щелкнув по значку Streamlit
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
+
+[Датасет](https://github.com/smirnovaanastasia1234/Te/blob/main/data.csv), используемый при демонстрации работы приложения.
 
 ## Результаты работы приложения
 Несколько примеров работы приложения:
