@@ -12,10 +12,16 @@
 ```python
 pip install telethon
 ```
- - Применить [код парсинга Телеграм](https://github.com/smirnovaanastasia1234/Te/blob/main/pars_teleg.py ) который расположен в данном репозитории
+ - Применить [код парсинга Телеграм](https://github.com/smirnovaanastasia1234/Te/blob/main/pars_teleg.py ), который расположен в данном репозитории
 
-Web-приложение для определения тональности текста. Используются библиотеки:
+## Web-приложение для определения тональности текста. 
+Web-приложение разделяет сообщения выгруженные из чата Телеграмм на 3 вида:
 
+    0: NEUTRAL
+    1: POSITIVE
+    2: NEGATIVE
+
+Используются библиотеки:
 - [TensorFlow](https://www.tensorflow.org/).
 - [Streamlit](https://streamlit.io/).
 
