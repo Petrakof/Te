@@ -17,7 +17,7 @@ Web-приложение для определения тональности т
 
 Приложение можно найти , щелкнув по значку Streamlit
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-c3tglj.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
 
 [Ссылка на развернутое приложение](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/).
 
