@@ -1,4 +1,3 @@
-pip install telethon
 
 import pandas as pd
 from telethon.sync import TelegramClient
