@@ -6,13 +6,15 @@ from telethon import TelegramClient
 api_id=st.text_input("api_id",   ) 
 api_hash=st.text_input ("Введите свой нa api_hash", '___') 
 phone= st.text_input ("Введите свой номер телефона", "введите номер") 
- 
+
+result = st.button('🤗Распознать')
+
 client = TelegramClient(phone, api_id, api_hash)
  
 client.start()
 
-name = '___' 
-chat = '___'
+name = st.text_input("name", '___' ) 
+chat =st.text_input("chat", '___' ) 
 
 data = [] 
 
@@ -22,5 +24,5 @@ with TelegramClient(name, api_id, api_hash) as client:
 
 
 df = pd.DataFrame(data, columns=['user_id', 'text'])
-print(df)
+result = st.button(df)
 
