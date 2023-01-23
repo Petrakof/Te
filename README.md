@@ -20,7 +20,8 @@ Web-приложение для определения тональности т
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
 
 ## Результаты работы приложения
-![Первая страница](images/1.png "Первая страница")
+![Вторая страница](images/2.png "Вторая страница")
+![Анализ](images/3.png "Анализ")
 
 ## Использованная литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
