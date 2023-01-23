@@ -78,96 +78,96 @@ if result:
     tab3.subheader("Анализ настроений")
     with tab3:
         st.subheader("Распределение тональности сообщений")
-    col1, col2 = st.columns(2)
-    with col1:
+        col1, col2 = st.columns(2)
+        with col1:
         #Первый график
-        fig = plt.figure()
-        palette = sns.color_palette('PiYG_r', 15)
-        plt.title('Распределение настроений')
-        sns.countplot(df_model['Sentinent'], palette=palette)
-        st.pyplot(fig)
+            fig = plt.figure()
+            palette = sns.color_palette('PiYG_r', 15)
+            plt.title('Распределение настроений')
+            sns.countplot(df_model['Sentinent'], palette=palette)
+            st.pyplot(fig)
 
-    with col2:
+        with col2:
         #Второй график
-        comment_words = ''
+            comment_words = ''
 
-        for val in df_model.text:
-            val = str(val)
-            tokens = val.split()
-            for i in range(len(tokens)):
-                tokens[i] = tokens[i].lower()
+            for val in df_model.text:
+                val = str(val)
+                tokens = val.split()
+                for i in range(len(tokens)):
+                    tokens[i] = tokens[i].lower()
             
-            comment_words += " ".join(tokens)+" "
+                comment_words += " ".join(tokens)+" "
 
-        wordcloud = WordCloud(background_color = "white",width=800, height=640).generate(comment_words)
+            wordcloud = WordCloud(background_color = "white",width=800, height=640).generate(comment_words)
 
-        fig = plt.figure()
-        plt.title('Облако слов')
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-        st.pyplot(fig)
+            fig = plt.figure()
+            plt.title('Облако слов')
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis("off")
+            plt.show()
+            st.pyplot(fig)
 
-    st.markdown("------------------------------------------------------------------------------------")
+        st.markdown("------------------------------------------------------------------------------------")
    
-    st.subheader("Негативные сообщения")
-    col3, col4 = st.columns(2)
-    with col3:
-        fig = plt.figure()
-        df_P= df_model[df_model["Sentinent"]=="NEGATIVE"]
-        df_p =df_P.user_id.value_counts().sort_index()
-        df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="hot")
-        plt.title("Самые негативные user_id	")
-        st.pyplot(fig)
+        st.subheader("Негативные сообщения")
+        col3, col4 = st.columns(2)
+        with col3:
+            fig = plt.figure()
+            df_P= df_model[df_model["Sentinent"]=="NEGATIVE"]
+            df_p =df_P.user_id.value_counts().sort_index()
+            df_p.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="hot")
+            plt.title("Самые негативные user_id	")
+            st.pyplot(fig)
 
-    with col4:
-        comment_words = ''
-        df_P = df_model[df_model["Sentinent"]=="NEGATIVE"]
-        for val in df_P.text:
-            val = str(val)
-            tokens = val.split()
-            for i in range(len(tokens)):
-                tokens[i] = tokens[i].lower()
+        with col4:
+            comment_words = ''
+            df_P = df_model[df_model["Sentinent"]=="NEGATIVE"]
+            for val in df_P.text:
+                val = str(val)
+                tokens = val.split()
+                for i in range(len(tokens)):
+                    tokens[i] = tokens[i].lower()
                 
-            comment_words += " ".join(tokens)+" "
+                comment_words += " ".join(tokens)+" "
 
-        wordcloud = WordCloud(background_color = "white",width=800, height=640, colormap="YlOrRd" ).generate(comment_words)
+            wordcloud = WordCloud(background_color = "white",width=800, height=640, colormap="YlOrRd" ).generate(comment_words)
 
-        fig = plt.figure()
-        plt.title('Облако слов негативных сообщений')
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-        st.pyplot(fig)   
+            fig = plt.figure()
+            plt.title('Облако слов негативных сообщений')
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis("off")
+            plt.show()
+            st.pyplot(fig)   
 
-    st.markdown("------------------------------------------------------------------------------------")
+        st.markdown("------------------------------------------------------------------------------------")
 
-    st.subheader("Позитивные сообщения")
-    col5, col6 = st.columns(2)
-    with col5:
-        fig = plt.figure()
-        df_N = df_model[df_model["Sentinent"]=="POSITIVE"]
-        df_n =df_N.user_id.value_counts().sort_index()
-        df_n.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="cividis")
-        plt.title("Самые позитивные user_id	")
-        st.pyplot(fig)
+        st.subheader("Позитивные сообщения")
+        col5, col6 = st.columns(2)
+        with col5:
+            fig = plt.figure()
+            df_N = df_model[df_model["Sentinent"]=="POSITIVE"]
+            df_n =df_N.user_id.value_counts().sort_index()
+            df_n.plot.bar(edgecolor='k', alpha=0.9, stacked = True, cmap="cividis")
+            plt.title("Самые позитивные user_id	")
+            st.pyplot(fig)
 
-    with col6:
-        comment_words = ''
-        df_N = df_model[df_model["Sentinent"]=="POSITIVE"]
-        for val in df_N.text:
-            val = str(val)
-            tokens = val.split()
-            for i in range(len(tokens)):
-                tokens[i] = tokens[i].lower()
+        with col6:
+            comment_words = ''
+            df_N = df_model[df_model["Sentinent"]=="POSITIVE"]
+            for val in df_N.text:
+                val = str(val)
+                tokens = val.split()
+                for i in range(len(tokens)):
+                    tokens[i] = tokens[i].lower()
                 
-            comment_words += " ".join(tokens)+" "
+                comment_words += " ".join(tokens)+" "
 
-        wordcloud = WordCloud(background_color = "white",width=800, height=640, colormap="PuBu_r").generate(comment_words)
+            wordcloud = WordCloud(background_color = "white",width=800, height=640, colormap="PuBu_r").generate(comment_words)
 
-        fig = plt.figure()
-        plt.title('Облако слов позитивных сообщений')
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-        st.pyplot(fig) 
+            fig = plt.figure()
+            plt.title('Облако слов позитивных сообщений')
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis("off")
+            plt.show()
+            st.pyplot(fig) 
