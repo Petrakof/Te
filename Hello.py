@@ -34,8 +34,11 @@ data = read_data(datafile).copy()
 dat = data.dropna(axis='index', how='any', subset=['text'])
 
 #обучение модели
-model=pipeline("sentiment-analysis",   
+@st.cache(allow_output_mutation=True)
+def load_model():
+    model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
+    return model
                       
 result = st.sidebar.button('🤗Распознать')
 #Индикатор выполнения
