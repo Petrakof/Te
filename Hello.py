@@ -36,6 +36,7 @@ dat = data.dropna(axis='index', how='any', subset=['text'])
 #обучение модели
 @st.cache(allow_output_mutation=True)
 def load_model():
+
     model=pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
     return model
@@ -50,7 +51,7 @@ for i in range(101):
     progress_text.text(f"Progress: {i}%")
 
 st.balloons()
-
+model = load_model()
 df_model = dat.copy()
 
 if result:
