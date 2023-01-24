@@ -51,6 +51,7 @@ for i in range(101):
     progress_text.text(f"Progress: {i}%")
 
 st.balloons()
+
 model = load_model()
 df_model = dat.copy()
 
