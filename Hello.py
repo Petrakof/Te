@@ -20,7 +20,7 @@ st.image(display)
 
 
 #загружаю модель
-@st.experimental_memo
+@st.cache
 
 def read_data(uploaded_file):
     return pd.read_csv(uploaded_file)
