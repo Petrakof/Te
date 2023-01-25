@@ -22,7 +22,7 @@ Web-приложение разделяет сообщения выгружен�
     2: NEGATIVE
 
 ## Streamlit app
-Приложение можно найти , щелкнув по значку Streamlit
+Приложение можно найти, щелкнув по значку Streamlit
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
 
